@@ -1,13 +1,21 @@
 import './App.css';
-import Timer from "./components/Timer"
+import React from "react";
+import Timer from "./components/Timer";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect,
+  useLocation
+} from "react-router-dom";
 
 function App() {
-  return (
-   <router>  
+  return ( 
      <div>
       <Timer />
+      <p>Test :)</p>
     </div>
-  </router>
  
   );
 }
