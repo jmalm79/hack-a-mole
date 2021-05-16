@@ -4,10 +4,21 @@ const Game = () => {
 	return (
 		<section className="home">
 			<div className="row">
-				<h1>HACKaMOLE</h1>
-				{/* class check-in component, but on this page starts the game */}
+				<div className="header">
+					<h1>HACKaMOLE</h1>
 
+					<div className="welcome">{/* class check-in component, but on this page starts the game */}</div>
+
+					{/* thinking we can hide the welcome div and show this div when the game starts */}
+					<div className="game-running">
+						<h3>
+							<span>SCORE:</span> 255
+						</h3>
+						<span className="timer" />
+					</div>
+				</div>
 				<section className="game-board">
+					{/* this is a game board square */}
 					<div className="game-square" dataPosition={1}>
 						<div className="clickable-game-object">
 							{/* this will be the head */}
@@ -16,6 +27,7 @@ const Game = () => {
 							</div>
 						</div>
 					</div>
+					{/* end of a board square */}
 				</section>
 			</div>
 		</section>
