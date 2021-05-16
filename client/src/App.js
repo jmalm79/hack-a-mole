@@ -4,6 +4,7 @@ import Timer from "./components/Timer";
 import StartBtn from "./components/StartBtn";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Share from "./components/Share"
 
 // import {
 //   BrowserRouter as Router,
@@ -39,7 +40,8 @@ function App() {
 
   return ( 
      <div>
-      <Header /> 
+      <Header />
+      <Share /> 
       <StartBtn handleStartBtn={handleStartBtn} />
       <Timer time={timer}/>
       <p>Test :)</p>
