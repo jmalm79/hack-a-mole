@@ -2,6 +2,10 @@ import './App.css';
 import React, { useState, useEffect } from "react";
 import Timer from "./components/Timer";
 import StartBtn from "./components/StartBtn";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Share from "./components/Share"
+
 // import {
 //   BrowserRouter as Router,
 //   Route,
@@ -12,29 +16,36 @@ import StartBtn from "./components/StartBtn";
 // } from "react-router-dom";
 
 function App() {
-  const [timer, setTimer ] = useState(60);
+  const [timer, setTimer ] = useState(10);
   const [playing, setPlaying ] = useState([false]);
 
   const handleStartBtn = event => {
-    setTimer(60);
-    setPlaying(true);
-    setTimeout(() => setTimer(timer-1), 1000)
+    if (playing === false) {
+      setTimer(10);
+      setPlaying(true);
+      setTimeout(() => setTimer(timer-1), 1000)
+    }
   }
 
   useEffect(() => {
-    if (timer > 0 && playing === true) {
+    if (timer > -1 && playing === true) {
       setTimeout(() => setTimer(timer-1), 1000)
     }
     else {
-      setTimer(timer);
+      setTimer(10);
+      //other end game logic, reactions here
+      setPlaying(false);
     }
     }, [timer])
 
   return ( 
      <div>
+      <Header />
+      <Share /> 
       <StartBtn handleStartBtn={handleStartBtn} />
       <Timer time={timer}/>
       <p>Test :)</p>
+      <Footer />
     </div>
  
   );
