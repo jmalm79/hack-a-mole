@@ -1,0 +1,58 @@
+Needs a front-end and a backend
+MongoDB and Mongoose
+
+React
+- State
+- Props
+- Routing
+- New tech
+
+Be ambitious
+- Interactive is more fun
+
+Hacka'mole
+
+General
+- Cartoony design
+- Light-hearted
+- Light color scheme
+- Find a font
+- Only points for hitting Gary
+    - Minus points for hitting Gage
+    - Gage in some kind of princess hat?
+
+REACT
+- "Heckles" the Squirrel mascot?
+- When win, drop the sunglasses down on the squirrel.
+- Squirrel heckles while player plays
+    - Could show up randomly on the site
+    - Could integrate chuck norris api or some other fun api into the heckles
+- Gary and Gage heads
+
+
+Game Logic
+- 3x3 mole board
+- after x points shortens time items are available to be hit
+- Timer determines end of Game
+- Scoring
+    - Gain points for hitting gary
+    - Lose points for hitting Gage
+    - Hit gage too many times, or game ends, you get the "you have been logged out of Hacka'Mole", poking fun of Bootcampspot
+- Gary power mode where all the moles are just gary's for x time
+- Mega Gage - If you don't hit him before he goes away, you lose the game.
+- Full board or have some empty holes as well
+- Need to get a "Damnit Drew" or something like that from Gary 
+
+API's
+ - Either find one to use or crowdsource from the class our own heckles
+    - If crowd source - Direct Message to whole class instead of a channel in slack. Maybe on Monday.
+
+TECH
+Google Fonts
+Animation Library
+Turning pointer into hammer
+
+Backend/Routes/Server Part of the Task
+- High Scores Scoreboard
+- Heckles db of the heckles
+
