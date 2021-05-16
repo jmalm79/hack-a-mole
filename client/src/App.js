@@ -12,21 +12,25 @@ import StartBtn from "./components/StartBtn";
 // } from "react-router-dom";
 
 function App() {
-  const [timer, setTimer ] = useState(60);
+  const [timer, setTimer ] = useState(10);
   const [playing, setPlaying ] = useState([false]);
 
   const handleStartBtn = event => {
-    setTimer(60);
-    setPlaying(true);
-    setTimeout(() => setTimer(timer-1), 1000)
+    if (playing === false) {
+      setTimer(10);
+      setPlaying(true);
+      setTimeout(() => setTimer(timer-1), 1000)
+    }
   }
 
   useEffect(() => {
-    if (timer > 0 && playing === true) {
+    if (timer > -1 && playing === true) {
       setTimeout(() => setTimer(timer-1), 1000)
     }
     else {
-      setTimer(timer);
+      setTimer(10);
+      //other end game logic, reactions here
+      setPlaying(false);
     }
     }, [timer])
 
