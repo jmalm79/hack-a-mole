@@ -2,6 +2,10 @@ import './App.css';
 import React, { useState, useEffect } from "react";
 import Timer from "./components/Timer";
 import StartBtn from "./components/StartBtn";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Share from "./components/Share"
+
 // import {
 //   BrowserRouter as Router,
 //   Route,
@@ -36,9 +40,12 @@ function App() {
 
   return ( 
      <div>
+      <Header />
+      <Share /> 
       <StartBtn handleStartBtn={handleStartBtn} />
       <Timer time={timer}/>
       <p>Test :)</p>
+      <Footer />
     </div>
  
   );
