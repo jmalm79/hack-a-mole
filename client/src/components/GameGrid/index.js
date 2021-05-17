@@ -5,6 +5,7 @@ import StartBtn from '../StartBtn';
 import '../Mole1';
 import Mole2 from '../Mole2';
 import Mole1 from '../Mole1';
+import Scoreboard from "../Scoreboard";
 
 function GameGrid(props) {
 	const [
@@ -127,32 +128,30 @@ function GameGrid(props) {
 	] = useState({ idx1: 10, idx2: 10 });
 	// const [timeRemaining, setTime ] = useState(props.time);
 
-	const [
-		timer,
-		setTimer
-	] = useState(10);
-	const [
-		playing,
-		setPlaying
-	] = useState(false);
+    const [timer, setTimer ] = useState(10);
+    const [playing, setPlaying ] = useState(false);
+    const [score, setScore] = useState(0);
 
-	const handleStartBtn = (event) => {
-		if (playing === false) {
-			setTimer(10);
-			setPlaying(true);
-			setTimeout(() => setTimer(timer - 1), 1000);
-		}
-	};
+    const handleStartBtn = event => {
+        if (playing === false) {
+        setTimer(10);
+        setScore(0);
+        setPlaying(true);
+        setTimeout(() => setTimer(timer-1), 1000)
+        }
+    }
 
-	const handleClick1 = (event) => {
-		console.log(event.target);
-		//add to score
-	};
+    const handleClick1 = event => {
+        console.log(event.target);
+        let newScore = score + 5
+        setScore(newScore);
+    }
 
-	const handleClick2 = (event) => {
-		console.log(event.target);
-		//add to score
-	};
+    const handleClick2 = event => {
+        console.log(event.target);
+        let newScore = score + 1;
+        setScore(newScore);
+    }
 
 	useEffect(
 		() => {
@@ -363,9 +362,7 @@ function GameGrid(props) {
 	return (
 		<div className="game">
 			<div className="game-running">
-				<h3>
-					<span>SCORE:</span> 255
-				</h3>
+				<Scoreboard score={score} />
 
 				<p className="start-btn">
 					<StartBtn handleStartBtn={handleStartBtn} />

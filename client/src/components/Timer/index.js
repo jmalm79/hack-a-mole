@@ -55,9 +55,22 @@ function Timer(props) {
 		var msg = new SpeechSynthesisUtterance();
 		msg.text = insult.phrase;
 
+  // text-to-speech function, comment out entire function to avoid being insulted
+  // setInterval(function() {
+  //   // choose a random insult
+  //   var insult = insults[Math.floor(Math.random() * insults.length)];
+    
+  //   // text to speech declared here
+  //   var msg = new SpeechSynthesisUtterance();
+  //   msg.text = insult.phrase
+    
+  //   // text-to-speech call
+  //   window.speechSynthesis.speak(msg);
+  // }, 10000);   // Interval set to 10 seconds, change to hear insults faster for testing
+
 		// text-to-speech call
-		window.speechSynthesis.speak(msg);
-	}, 10000); // Interval set to 10 seconds, change to hear insults faster for testing
+	//	window.speechSynthesis.speak(msg);
+	// }, 10000); // Interval set to 10 seconds, change to hear insults faster for testing
 
 	return (
 		<div className="countdown">

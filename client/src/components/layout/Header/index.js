@@ -35,7 +35,6 @@ function Header() {
 					</li>
 				</ul>
 			</nav>
-
 		</header>
 		<div className="social"><Share /></div>
 		</>
