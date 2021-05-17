@@ -4,7 +4,16 @@ import { render } from 'react-dom';
 import "./style.css";
 
 // import insult api
-import API from "../utils/API";
+/* import axios from "axios";
+
+const getInsults = async () => {
+  const data = await axios.get("/api/phrases")
+  console.log(data)
+  return data
+}
+
+const insults = getInsults();
+console.log(insults) */
 
 // import './styles.css';
 
@@ -26,26 +35,9 @@ import API from "../utils/API";
 // render(<Timer />, rootElement);
 
 function Timer(props) {
-  // set initial state
-  // eslint-disable-next-line no-undef
-  const [insults, setInsults] = useState([])
-
-  // Load all books and store them with setBooks
-  // eslint-disable-next-line no-undef
-  useEffect(() => {
-    loadInsults()
-  }, [])
-
-  function loadInsults() {
-    API.getInsults()
-      .then(res => 
-        setInsults(res.data)
-      )
-      .catch(err => console.log(err));
-  };
 
   // text-to-speech function, comment out entire function to avoid being insulted
-  setInterval(function() {
+/*   setInterval(function() {
 
     // // choose a random insult
     // var insult = insults[Math.floor(Math.random() * insults.length)];
@@ -57,7 +49,7 @@ function Timer(props) {
     
     // // text-to-speech call
     // window.speechSynthesis.speak(msg);
-  }, 100000);   // Interval set to 10 seconds, change to hear insults faster for testing
+  }, 100000);   // Interval set to 10 seconds, change to hear insults faster for testing */
 
   return(
     <div>
