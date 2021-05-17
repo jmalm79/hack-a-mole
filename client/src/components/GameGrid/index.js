@@ -6,6 +6,7 @@ import "./style.css";
 import "../Mole1";
 import Mole2 from "../Mole2";
 import Mole1 from "../Mole1";
+import Scoreboard from "../Scoreboard";
 
 function GameGrid(props) {
     const [moles, setMoles ] = useState([false]);
@@ -32,10 +33,12 @@ function GameGrid(props) {
 
     const [timer, setTimer ] = useState(10);
     const [playing, setPlaying ] = useState(false);
+    const [score, setScore] = useState(0);
 
     const handleStartBtn = event => {
         if (playing === false) {
         setTimer(10);
+        setScore(0);
         setPlaying(true);
         setTimeout(() => setTimer(timer-1), 1000)
         }
@@ -43,12 +46,14 @@ function GameGrid(props) {
 
     const handleClick1 = event => {
         console.log(event.target);
-        //add to score
+        let newScore = score + 5
+        setScore(newScore);
     }
 
     const handleClick2 = event => {
         console.log(event.target);
-        //add to score
+        let newScore = score + 1;
+        setScore(newScore);
     }
 
     useEffect(() => {
@@ -250,6 +255,7 @@ function GameGrid(props) {
         <div>
             <StartBtn handleStartBtn={handleStartBtn} />
             <Timer time={timer}/>
+            <Scoreboard score={score}/>
             <div className="row">
                 <div className="column"> 
                     <Computer className="computer"> 
