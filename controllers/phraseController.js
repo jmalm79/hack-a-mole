@@ -2,6 +2,7 @@ const db = require("../models");
 
 module.exports = {
   findAll: function(req, res) {
+    console.log("find")
     db.Phrase
       .find({})
       .then(hackamoleDB => res.json(hackamoleDB))

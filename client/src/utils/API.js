@@ -2,7 +2,7 @@
 import axios from "axios";
 
 export default {
-  // Gets all insults from Phrase table
+  // Gets all phrases/insults
   getInsults: function() {
     return axios.get("/api/phrases")
   }

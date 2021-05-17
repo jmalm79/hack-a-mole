@@ -6,31 +6,6 @@ import "./style.css";
 // import insult api
 import API from "../utils/API";
 
-// eventually, import insults in from database
-// for now, this is insults
-// const insults = [
-//   {
-//     phrase: "sucks to suck"
-//   },
-//   {
-//     phrase: "you done messed up a a ron"
-//   },
-//   {
-//     phrase: "a dead raccoon could write better code"
-//   },
-//   {
-//     phrase: "idiot sandwich"
-//   },
-//   {
-//     phrase: "that was bad"
-//   },
-//   {
-//     phrase: "whiffed it"
-//   }
-// ]
-
-const insults = API.getInsults
-
 // import './styles.css';
 
 // function Timer() {
@@ -51,19 +26,38 @@ const insults = API.getInsults
 // render(<Timer />, rootElement);
 
 function Timer(props) {
+  // set initial state
+  // eslint-disable-next-line no-undef
+  const [insults, setInsults] = useState([])
+
+  // Load all books and store them with setBooks
+  // eslint-disable-next-line no-undef
+  useEffect(() => {
+    loadInsults()
+  }, [])
+
+  function loadInsults() {
+    API.getInsults()
+      .then(res => 
+        setInsults(res.data)
+      )
+      .catch(err => console.log(err));
+  };
 
   // text-to-speech function, comment out entire function to avoid being insulted
   setInterval(function() {
-    // choose a random insult
-    var insult = insults[Math.floor(Math.random() * insults.length)];
+
+    // // choose a random insult
+    // var insult = insults[Math.floor(Math.random() * insults.length)];
+    // console.log(insult.data.content)
     
-    // text to speech declared here
-    var msg = new SpeechSynthesisUtterance();
-    msg.text = insult.content
+    // // text to speech declared here
+    // var msg = new SpeechSynthesisUtterance();
+    // msg.text = insult.data.content
     
-    // text-to-speech call
-    window.speechSynthesis.speak(msg);
-  }, 10000);   // Interval set to 10 seconds, change to hear insults faster for testing
+    // // text-to-speech call
+    // window.speechSynthesis.speak(msg);
+  }, 100000);   // Interval set to 10 seconds, change to hear insults faster for testing
 
   return(
     <div>
