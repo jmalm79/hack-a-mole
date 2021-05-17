@@ -1,30 +1,30 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 
-import "./style.css";
+import './style.css';
 
 // eventually, import insults in from database
 // for now, this is insults
 const insults = [
-  {
-    phrase: "sucks to suck"
-  },
-  {
-    phrase: "you done messed up a a ron"
-  },
-  {
-    phrase: "a dead raccoon could write better code"
-  },
-  {
-    phrase: "idiot sandwich"
-  },
-  {
-    phrase: "that was bad"
-  },
-  {
-    phrase: "whiffed it"
-  }
-]
+	{
+		phrase : 'sucks to suck'
+	},
+	{
+		phrase : 'you done messed up a a ron'
+	},
+	{
+		phrase : 'a dead raccoon could write better code'
+	},
+	{
+		phrase : 'idiot sandwich'
+	},
+	{
+		phrase : 'that was bad'
+	},
+	{
+		phrase : 'whiffed it'
+	}
+];
 
 // import './styles.css';
 
@@ -46,6 +46,14 @@ const insults = [
 // render(<Timer />, rootElement);
 
 function Timer(props) {
+	// text-to-speech function, comment out entire function to avoid being insulted
+	setInterval(function() {
+		// choose a random insult
+		var insult = insults[Math.floor(Math.random() * insults.length)];
+
+		// text to speech declared here
+		var msg = new SpeechSynthesisUtterance();
+		msg.text = insult.phrase;
 
   // text-to-speech function, comment out entire function to avoid being insulted
   // setInterval(function() {
@@ -60,12 +68,16 @@ function Timer(props) {
   //   window.speechSynthesis.speak(msg);
   // }, 10000);   // Interval set to 10 seconds, change to hear insults faster for testing
 
-  return(
-    <div>
-      <p>Countdown: {props.time}</p>
-      
-    </div>
-  )
+		// text-to-speech call
+	//	window.speechSynthesis.speak(msg);
+	// }, 10000); // Interval set to 10 seconds, change to hear insults faster for testing
+
+	return (
+		<div className="countdown">
+			<p>Time Remaining</p>
+			<span className="timer">{props.time}</span>
+		</div>
+	);
 }
 
 export default Timer;

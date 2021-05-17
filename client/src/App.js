@@ -9,8 +9,6 @@ import Header from './components/layout/Header';
 
 =======
 import React, { useState, useEffect } from 'react';
-import Share from './components/Share';
-import GameGrid from './components/GameGrid';
 import Footer from './components/layout/Footer';
 import Header from './components/layout/Header';
 import Game from './components/layout/Game';
@@ -93,13 +91,10 @@ function App() {
 	return (
 		<div>
 			<Header />
-			<Share />
-			<p>Test :)</p>
-			<GameGrid />
-			<Footer />
 			<Game />
 			<HighScores />
 			<Instructions />
+			<Footer />
 		</div>
 	);
 >>>>>>> main

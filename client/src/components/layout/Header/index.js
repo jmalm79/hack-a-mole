@@ -7,6 +7,7 @@ import Logo from '../../../images/logo.png';
 
 function Header() {
 	return (
+		<>
 		<header>
 			<a href="#" className="logo">
 				<img src={Logo} alt="This is heckles. Hes tired of your sh*t" />
@@ -34,8 +35,9 @@ function Header() {
 					</li>
 				</ul>
 			</nav>
-			<Share />
 		</header>
+		<div className="social"><Share /></div>
+		</>
 	);
 }
 
