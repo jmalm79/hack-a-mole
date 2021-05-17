@@ -3,6 +3,10 @@ import { render } from 'react-dom';
 
 import "./style.css";
 
+// text to speech
+var msg = new SpeechSynthesisUtterance();
+msg.text = "Sucks to suck";
+
 // import './styles.css';
 
 // function Timer() {
@@ -23,9 +27,13 @@ import "./style.css";
 // render(<Timer />, rootElement);
 
 function Timer(props) {
+
+  window.speechSynthesis.speak(msg);
+  
   return(
     <div>
       <p>Countdown: {props.time}</p>
+      
     </div>
   )
 }
