@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+:root {
+	--off-white: #dbdbdb;
+	--orange: #fa4c09;
+	--pink: #ff0063;
+	--blue: #337bff;
+	--purple: #7831e9;
+	--yellow: #ffb60e;
+	--footer-text: #a2a2a2;
+	--footer-link: #5c5c5c;
+}
+* {
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	background-color: #dbdbdb;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-weight: bold;
+}
+h1 {
+	color: var(--orange);
+	font-size: 3.1rem;
+	font-weight: 900;
+	-webkit-text-stroke: 1px white;
+	text-shadow: 4px 4px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+hr {
+	height: 6px;
+	background-color: var(--footer-text);
+	border: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* 
+//////Initial Structure
+*/
+
+header {
+	min-height: 125px;
+	display: flex;
+	justify-content: space-between;
+}
+a.logo {
+	padding: 30px 20px;
+	text-decoration: none;
+	max-width: 70px;
+	text-align: center;
+}
+a.logo span {
+	font-size: .6rem;
+	color: var(--footer-text);
+	text-transform: uppercase;
+}
+nav {
+	padding: 30px 20px;
+}
+nav ul li {
+	display: inline-block;
+	margin: 0 20px;
+}
+nav a {
+	font-weight: 900;
+	font-size: .9rem;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+nav a {
+	-webkit-text-stroke: 1px white;
+	text-shadow: 2px 2px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+path {
+	stroke: #ffffff;
+	stroke-width: 3px;
+	stroke-dasharray: 2, 2;
+	stroke-linejoin: round;
+}
+nav .play-game a {
+	color: var(--blue);
+}
+nav .play-game svg {
+	color: var(--blue);
+}
+nav .high-scores a {
+	color: var(--purple);
+}
+nav .high-scores svg {
+	color: var(--purple);
+}
+nav .share a {
+	color: var(--pink);
+}
+nav .share svg {
+	color: var(--pink);
+}
+nav svg {
+	margin-right: 15px;
+	transform: scale(1.5);
 }
 
-.App-link {
-  color: #61dafb;
+footer {
+	color: var(--footer-text);
+	font-size: .8rem;
+	display: flex;
+	font-weight: bold;
+	width: 100%;
+	justify-content: space-between;
+	padding: 4% 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer .github a {
+	color: var(--footer-link);
+	text-decoration: none;
 }
