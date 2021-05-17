@@ -7,6 +7,7 @@
 	--yellow: #ffb60e;
 	--footer-text: #a2a2a2;
 	--footer-link: #5c5c5c;
+	--dark-blue: #082a67;
 }
 * {
 	box-sizing: border-box;
@@ -28,9 +29,21 @@ h5 {
 h1 {
 	color: var(--orange);
 	font-size: 3.1rem;
+	text-align: center;
+	margin-bottom: 30px;
 	font-weight: 900;
 	-webkit-text-stroke: 1px white;
 	text-shadow: 4px 4px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+h3 {
+	text-align: center;
+	color: #444;
+	text-transform: uppercase;
+	font-size: 2rem;
+	font-weight: 600;
+}
+h3 span {
+	font-weight: 300;
 }
 hr {
 	height: 6px;
@@ -39,7 +52,7 @@ hr {
 }
 
 /* 
-//////Initial Structure
+//////Header
 */
 
 header {
@@ -50,7 +63,7 @@ header {
 a.logo {
 	padding: 30px 20px;
 	text-decoration: none;
-	max-width: 70px;
+	max-width: 110px;
 	text-align: center;
 }
 a.logo span {
@@ -58,6 +71,17 @@ a.logo span {
 	color: var(--footer-text);
 	text-transform: uppercase;
 }
+/* 
+//////layout
+*/
+.row {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+/* 
+//////nav
+*/
 nav {
 	padding: 30px 20px;
 }
@@ -75,12 +99,7 @@ nav a {
 	-webkit-text-stroke: 1px white;
 	text-shadow: 2px 2px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
-path {
-	stroke: #ffffff;
-	stroke-width: 3px;
-	stroke-dasharray: 2, 2;
-	stroke-linejoin: round;
-}
+
 nav .play-game a {
 	color: var(--blue);
 }
@@ -104,6 +123,63 @@ nav svg {
 	transform: scale(1.5);
 }
 
+/* 
+////// Game Board
+*/
+span.timer {
+	font-size: 7rem;
+	color: var(--purple);
+	font-weight: 900;
+	display: block;
+	text-align: center;
+	-webkit-text-stroke: 1px white;
+	text-shadow: 5px 5px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+.countdown p {
+	margin-top: 40px;
+	text-align: center;
+}
+.start-btn {
+	text-align: center;
+}
+.start {
+	padding: 20px 40px;
+	margin: 20px 0;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	color: white;
+	background-color: var(--blue);
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+		0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+		0 100px 80px rgba(0, 0, 0, 0.07);
+}
+.start svg {
+	margin-right: 15px;
+	transform: scale(1.5);
+}
+.start span {
+	color: var(--dark-blue);
+	text-transform: capitalize;
+	font-size: .8rem;
+	font-weight: 900;
+}
+
+/* 
+//////computers
+*/
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+}
+.grid .box {
+	flex-basis: 30%;
+	width: 30%;
+}
+/* 
+//////Footer
+*/
 footer {
 	color: var(--footer-text);
 	font-size: .8rem;

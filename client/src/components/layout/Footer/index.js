@@ -6,10 +6,10 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 function Footer() {
 	return (
 		<footer className="footer">
-			<span class="messed-up">
+			<span className="messed-up">
 				<div>You messed up now A-A-ron</div>
 			</span>
-			<span class="github">
+			<span className="github">
 				View on{' '}
 				<a
 					class="nav-link"
