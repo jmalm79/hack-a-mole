@@ -34,6 +34,7 @@ function Header() {
 					</li>
 				</ul>
 			</nav>
+			<Share />
 		</header>
 	);
 }
