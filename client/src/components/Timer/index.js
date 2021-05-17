@@ -3,28 +3,33 @@ import { render } from 'react-dom';
 
 import "./style.css";
 
+// import insult api
+import API from "../utils/API";
+
 // eventually, import insults in from database
 // for now, this is insults
-const insults = [
-  {
-    phrase: "sucks to suck"
-  },
-  {
-    phrase: "you done messed up a a ron"
-  },
-  {
-    phrase: "a dead raccoon could write better code"
-  },
-  {
-    phrase: "idiot sandwich"
-  },
-  {
-    phrase: "that was bad"
-  },
-  {
-    phrase: "whiffed it"
-  }
-]
+// const insults = [
+//   {
+//     phrase: "sucks to suck"
+//   },
+//   {
+//     phrase: "you done messed up a a ron"
+//   },
+//   {
+//     phrase: "a dead raccoon could write better code"
+//   },
+//   {
+//     phrase: "idiot sandwich"
+//   },
+//   {
+//     phrase: "that was bad"
+//   },
+//   {
+//     phrase: "whiffed it"
+//   }
+// ]
+
+const insults = API.getInsults
 
 // import './styles.css';
 
@@ -54,7 +59,7 @@ function Timer(props) {
     
     // text to speech declared here
     var msg = new SpeechSynthesisUtterance();
-    msg.text = insult.phrase
+    msg.text = insult.content
     
     // text-to-speech call
     window.speechSynthesis.speak(msg);
