@@ -14,3 +14,7 @@
 .shown {
     display: block;
 }
+
+.mole1:hover {
+    cursor: url('https://cdn0.iconfinder.com/data/icons/electricity-and-functional-elements/512/keyboard-key-trash-garbage-delete-files-128.png') 50 50, auto;
+}

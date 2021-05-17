@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { render } from 'react-dom';
+// import { render } from 'react-dom';
 
-import "./style.css";
+import './style.css';
 
 // import insult api
 /* import axios from "axios";
@@ -35,6 +35,14 @@ console.log(insults) */
 // render(<Timer />, rootElement);
 
 function Timer(props) {
+	// text-to-speech function, comment out entire function to avoid being insulted
+	setInterval(function() {
+		// choose a random insult
+		// var insult = insults[Math.floor(Math.random() * insults.length)];
+
+		// text to speech declared here
+		// var msg = new SpeechSynthesisUtterance();
+		// msg.text = insult.phrase;
 
   // text-to-speech function, comment out entire function to avoid being insulted
 /*   setInterval(function() {
@@ -48,15 +56,15 @@ function Timer(props) {
     // msg.text = insult.data.content
     
     // // text-to-speech call
-    // window.speechSynthesis.speak(msg);
-  }, 100000);   // Interval set to 10 seconds, change to hear insults faster for testing */
+    // window.speechSynthesis.speak(msg);*/
+  }, 100000);   // Interval set to 10 seconds, change to hear insults faster for testing 
 
-  return(
-    <div>
-      <p>Countdown: {props.time}</p>
-      
-    </div>
-  )
+	return (
+		<div className="countdown">
+			<p>Time Remaining</p>
+			<span className="timer">{props.time}</span>
+		</div>
+	);
 }
 
 export default Timer;

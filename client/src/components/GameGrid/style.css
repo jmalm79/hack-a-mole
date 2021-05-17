@@ -1,12 +1,1 @@
-.row {
-    width: 100%;
-    margin: auto;
-  }
 
-  .column {
-    width: 33.33%;
-    height: 230px;
-    margin: auto;
-    display: inline;
-    float: left;
-  }
