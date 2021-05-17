@@ -2,6 +2,8 @@ import './App.css';
 import React, { useState, useEffect } from "react";
 import Timer from "./components/Timer";
 import StartBtn from "./components/StartBtn";
+import Computer from "./components/Computer";
+import GameGrid from "./components/GameGrid";
 // import {
 //   BrowserRouter as Router,
 //   Route,
@@ -12,33 +14,39 @@ import StartBtn from "./components/StartBtn";
 // } from "react-router-dom";
 
 function App() {
-  const [timer, setTimer ] = useState(10);
-  const [playing, setPlaying ] = useState([false]);
+  // const [timer, setTimer ] = useState(10);
+  // const [playing, setPlaying ] = useState(false);
 
-  const handleStartBtn = event => {
-    if (playing === false) {
-      setTimer(10);
-      setPlaying(true);
-      setTimeout(() => setTimer(timer-1), 1000)
-    }
-  }
+  // const handleStartBtn = event => {
+  //   if (playing === false) {
+  //     setTimer(10);
+  //     setPlaying(true);
+  //     setTimeout(() => setTimer(timer-1), 1000)
+  //   }
+  // }
 
-  useEffect(() => {
-    if (timer > -1 && playing === true) {
-      setTimeout(() => setTimer(timer-1), 1000)
-    }
-    else {
-      setTimer(10);
-      //other end game logic, reactions here
-      setPlaying(false);
-    }
-    }, [timer])
+  // const handleClick1 = event => {
+  //   console.log(event.target);
+  // }
+
+  // useEffect(() => {
+  //   if (timer > -1 && playing === true) {
+  //     setTimeout(() => setTimer(timer-1), 1000)
+  //   }
+  //   else {
+  //     setTimer(10);
+  //     //other end game logic, reactions here
+  //     setPlaying(false);
+  //   }
+  //   }, [timer])
 
   return ( 
      <div>
-      <StartBtn handleStartBtn={handleStartBtn} />
-      <Timer time={timer}/>
+      {/* <StartBtn handleStartBtn={handleStartBtn} />
+      <Timer time={timer}/> */}
       <p>Test :)</p>
+      {/* <GameGrid time={timer} playing={playing} handleClick1={handleClick1}/> */}
+      <GameGrid/>
     </div>
  
   );
