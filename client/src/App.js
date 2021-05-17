@@ -3,10 +3,9 @@ import React, { useState, useEffect } from "react";
 import Computer from "./components/Computer";
 import GameGrid from "./components/GameGrid";
 import Timer from './components/Timer';
-import StartBtn from './components/StartBtn';
 import Footer from './components/layout/Footer';
 import Header from './components/layout/Header';
-import Share from './components/Share';
+
 // import {
 //   BrowserRouter as Router,
 //   Route,
@@ -46,7 +45,6 @@ function App() {
   return ( 
      <div>
         <Header />
-        <Share />
         <p>Test :)</p>
         <GameGrid/>
         <Footer />

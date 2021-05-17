@@ -1,4 +1,5 @@
 import React from 'react';
+import CheckIn from "../../CheckIn"
 
 const Instructions = () => {
 	return (
@@ -15,7 +16,7 @@ const Instructions = () => {
 					<li>I don't care.</li>
 				</ol>
 
-				{/* here we will have the class checkin component that will take someone to the start game screen */}
+				<CheckIn />
 			</div>
 		</section>
 	);
