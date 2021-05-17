@@ -1,0 +1,20 @@
+.mole2 {
+    border: solid #770a0a 1px;
+    background-color: #770a0a;
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.shown {
+    display: block;
+}
+
+.mole2:hover {
+    cursor: url('https://cdn4.iconfinder.com/data/icons/keyboard-solid-style/24/keyboard-key-delete-128.png') 50 50, auto;
+}

@@ -1,28 +1,43 @@
 import React from 'react';
 import './style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChessKing, faHeart, faGamepad } from '@fortawesome/free-solid-svg-icons';
 import Share from '../../Share';
 import Logo from '../../../images/logo.png';
 
 function Header() {
 	return (
+		<>
 		<header>
 			<a href="#" className="logo">
 				<img src={Logo} alt="This is heckles. Hes tired of your sh*t" />
+				<span>This is Heckles; he's tired of your shit.</span>
 			</a>
 			<nav>
-				<ul class="nav">
-					<li class="play-game">
-						<a href="#">PlayGame</a>
+				<ul className="nav">
+					<li className="play-game">
+						<a href="#">
+							<FontAwesomeIcon icon={faGamepad} />
+							PlayGame
+						</a>
 					</li>
-					<li class="high-scores">
-						<a href="#">High Scores</a>
+					<li className="high-scores">
+						<a href="#">
+							<FontAwesomeIcon icon={faChessKing} />
+							High Scores
+						</a>
 					</li>
-					<li class="share">
-						<a href="#">Share</a>
+					<li className="share">
+						<a href="#">
+							<FontAwesomeIcon icon={faHeart} />
+							Share
+						</a>
 					</li>
 				</ul>
 			</nav>
 		</header>
+		<div className="social"><Share /></div>
+		</>
 	);
 }
 

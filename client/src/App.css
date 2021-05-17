@@ -1,38 +1,195 @@
-.App {
-  text-align: center;
+:root {
+	--off-white: #dbdbdb;
+	--orange: #fa4c09;
+	--pink: #ff0063;
+	--blue: #337bff;
+	--purple: #7831e9;
+	--yellow: #ffb60e;
+	--footer-text: #a2a2a2;
+	--footer-link: #5c5c5c;
+	--dark-blue: #082a67;
+}
+* {
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	background-color: #dbdbdb;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-weight: bold;
+}
+h1 {
+	color: var(--orange);
+	font-size: 3.1rem;
+	text-align: center;
+	margin-bottom: 30px;
+	font-weight: 900;
+	-webkit-text-stroke: 1px white;
+	text-shadow: 4px 4px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+h3 {
+	text-align: center;
+	color: #444;
+	text-transform: uppercase;
+	font-size: 2rem;
+	font-weight: 600;
+}
+h3 span {
+	font-weight: 300;
+}
+hr {
+	height: 6px;
+	background-color: var(--footer-text);
+	border: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* 
+//////Header
+*/
+
+header {
+	min-height: 125px;
+	display: flex;
+	justify-content: space-between;
+}
+a.logo {
+	padding: 30px 20px;
+	text-decoration: none;
+	max-width: 110px;
+	text-align: center;
+}
+a.logo span {
+	font-size: .6rem;
+	color: var(--footer-text);
+	text-transform: uppercase;
+}
+/* 
+//////layout
+*/
+.row {
+	max-width: 800px;
+	margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+/* 
+//////nav
+*/
+nav {
+	padding: 30px 20px;
+}
+nav ul li {
+	display: inline-block;
+	margin: 0 20px;
+}
+nav a {
+	font-weight: 900;
+	font-size: .9rem;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+nav a {
+	-webkit-text-stroke: 1px white;
+	text-shadow: 2px 2px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav .play-game a {
+	color: var(--blue);
+}
+nav .play-game svg {
+	color: var(--blue);
+}
+nav .high-scores a {
+	color: var(--purple);
+}
+nav .high-scores svg {
+	color: var(--purple);
+}
+nav .share a {
+	color: var(--pink);
+}
+nav .share svg {
+	color: var(--pink);
+}
+nav svg {
+	margin-right: 15px;
+	transform: scale(1.5);
+}
+
+/* 
+////// Game Board
+*/
+span.timer {
+	font-size: 7rem;
+	color: var(--purple);
+	font-weight: 900;
+	display: block;
+	text-align: center;
+	-webkit-text-stroke: 1px white;
+	text-shadow: 5px 5px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+.countdown p {
+	margin-top: 40px;
+	text-align: center;
+}
+.start-btn {
+	text-align: center;
+}
+.start {
+	padding: 20px 40px;
+	margin: 20px 0;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	color: white;
+	background-color: var(--blue);
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+		0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+		0 100px 80px rgba(0, 0, 0, 0.07);
+}
+.start svg {
+	margin-right: 15px;
+	transform: scale(1.5);
+}
+.start span {
+	color: var(--dark-blue);
+	text-transform: capitalize;
+	font-size: .8rem;
+	font-weight: 900;
+}
+
+/* 
+//////computers
+*/
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+}
+.grid .box {
+	flex-basis: 30%;
+	width: 30%;
+}
+/* 
+//////Footer
+*/
+footer {
+	color: var(--footer-text);
+	font-size: .8rem;
+	display: flex;
+	font-weight: bold;
+	width: 100%;
+	justify-content: space-between;
+	padding: 4% 20px;
+}
+footer .github a {
+	color: var(--footer-link);
+	text-decoration: none;
 }

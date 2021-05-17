@@ -10,4 +10,20 @@
 body {
 	background-color: #dbdbdb;
 	font-family: 'Inter', sans-serif;
+	font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-weight: bold;
+}
+h1 {
+	color: var(--orange);
+	font-size: 9.1em;
+	font-weight: 900;
+	-webkit-text-stroke: 1px white;
+	text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
