@@ -1,9 +1,12 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
-import Timer from "./components/Timer";
-import StartBtn from "./components/StartBtn";
 import Computer from "./components/Computer";
 import GameGrid from "./components/GameGrid";
+import Timer from './components/Timer';
+import StartBtn from './components/StartBtn';
+import Footer from './components/layout/Footer';
+import Header from './components/layout/Header';
+import Share from './components/Share';
 // import {
 //   BrowserRouter as Router,
 //   Route,
@@ -42,14 +45,15 @@ function App() {
 
   return ( 
      <div>
-      {/* <StartBtn handleStartBtn={handleStartBtn} />
-      <Timer time={timer}/> */}
-      <p>Test :)</p>
-      {/* <GameGrid time={timer} playing={playing} handleClick1={handleClick1}/> */}
-      <GameGrid/>
-    </div>
- 
-  );
+        <Header />
+        <Share />
+        <p>Test :)</p>
+        <GameGrid/>
+        <Footer />
+      </div>
+  )
+
 }
+
 
 export default App;

@@ -1,0 +1,13 @@
+:root {
+	--off-white: #dbdbdb;
+	--orange: #fa4c09;
+	--pink: #ff0063;
+	--blue: #337bff;
+	--purple: #7831e9;
+	--yellow: #ffb60e;
+}
+
+body {
+	background-color: #dbdbdb;
+	font-family: 'Inter', sans-serif;
+}
