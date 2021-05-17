@@ -4,7 +4,7 @@ const HighScores = () => {
 	return (
 		<section className="high-scores">
 			<div className="row">
-				<h1>High Scores</h1>
+				<h1>HIGH SCORES</h1>
 				<hr />
 				<table>
 					<tr className="table-header">
