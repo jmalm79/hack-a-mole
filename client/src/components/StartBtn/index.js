@@ -9,7 +9,7 @@ function StartBtn(props) {
 			<FontAwesomeIcon icon={faGamepad} />
 			{props.buttonText}
 			<br />
-			<span>(Start the Game)</span>
+			<span>{props.subText}</span>
 		</button>
 	);
 }
