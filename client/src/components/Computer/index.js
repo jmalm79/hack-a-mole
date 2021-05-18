@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.css';
-import ComputerImage from './../../images/computer2x.png';
+import ComputerImage from './../../images/computer.png';
 
 function Computer(props) {
 	return (
-		<div className="box game-square" dataPosition={1}>
+		<div className="box game-square">
 			<div className="clickable-game-object">
 				<div className="backdrop">
 					{/* this will be an empty div that will be the backdrop. This will be black, pink or yellow. */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import CheckIn from "../../CheckIn"
+import StartBtn from '../../StartBtn';
 
 const Instructions = () => {
 	return (
@@ -16,7 +16,9 @@ const Instructions = () => {
 					<li>I don't care.</li>
 				</ol>
 
-				<CheckIn />
+				<p className="start-btn">
+					<StartBtn buttonText={'OK Lets Play'} />
+				</p>
 			</div>
 		</section>
 	);

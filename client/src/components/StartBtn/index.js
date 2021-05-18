@@ -6,7 +6,9 @@ import { faGamepad } from '@fortawesome/free-solid-svg-icons';
 function StartBtn(props) {
 	return (
 		<button className="start" onClick={props.handleStartBtn}>
-			<FontAwesomeIcon icon={faGamepad} />Class Check-In<br />
+			<FontAwesomeIcon icon={faGamepad} />
+			{props.buttonText}
+			<br />
 			<span>(Start the Game)</span>
 		</button>
 	);
