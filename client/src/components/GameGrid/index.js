@@ -240,7 +240,7 @@ function GameGrid(props) {
 				<Scoreboard score={score} />
 
 				<p className="start-btn">
-					<StartBtn handleStartBtn={handleStartBtn} />
+					<StartBtn subText="(Start The Game)" buttonText="Check-In To Class" handleStartBtn={handleStartBtn} />
 					{/* TODO: This needs to match the other button at the bottom of scores */}
 				</p>
 				<Timer time={timer} />
