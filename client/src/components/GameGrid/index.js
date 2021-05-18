@@ -176,17 +176,17 @@ function GameGrid(props) {
         }
     }
 
-    const handleClick1 = event => {
-        console.log(event.target);
-        let newScore = score + 5
-        setScore(newScore);
-    }
+	const handleClick1 = (event) => {
+		console.log(event.target);
+		let newScore = score + 5;
+		setScore(newScore);
+	};
 
-    const handleClick2 = event => {
-        console.log(event.target);
-        let newScore = score + 1;
-        setScore(newScore);
-    }
+	const handleClick2 = (event) => {
+		console.log(event.target);
+		let newScore = score + 1;
+		setScore(newScore);
+	};
 
 	useEffect(
 		() => {
@@ -401,6 +401,7 @@ function GameGrid(props) {
 
 				<p className="start-btn">
 					<StartBtn handleStartBtn={handleStartBtn} />
+					{/* TODO: This needs to match the other button at the bottom of scores */}
 				</p>
 				<Timer time={timer} />
 			</div>
