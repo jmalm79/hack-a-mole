@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import ComputerImage from './../../images/computer2x.png';
+import ComputerImage from './../../images/computer.png';
 
 function Computer(props) {
 	return (
