@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import ComputerImage from './../../images/computer.png';
+import ComputerImage from './../../images/computer2x.png';
 
 function Computer(props) {
 	return (
@@ -10,7 +10,11 @@ function Computer(props) {
 					{/* this will be an empty div that will be the backdrop. This will be black, pink or yellow. */}
 				</div>
 				{props.children}
-				<img src={ComputerImage} alt="Computer which is the foreground of the play square." />
+				<img
+					className="computer"
+					src={ComputerImage}
+					alt="Computer which is the foreground of the play square."
+				/>
 			</div>
 		</div>
 	);
