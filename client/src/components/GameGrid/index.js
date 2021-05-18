@@ -10,169 +10,82 @@ import Scoreboard from "../Scoreboard";
 import API from "../../utils/API";
 
 function GameGrid(props) {
-	const [
-		moles,
-		setMoles
-	] = useState([
-		false
-	]);
-	const [
-		mole1,
-		setMole1
-	] = useState([
-		false
-	]);
-	const [
-		mole2,
-		setMole2
-	] = useState([
-		false
-	]);
-	const [
-		mole3,
-		setMole3
-	] = useState([
-		false
-	]);
-	const [
-		mole4,
-		setMole4
-	] = useState([
-		false
-	]);
-	const [
-		mole5,
-		setMole5
-	] = useState([
-		false
-	]);
-	const [
-		mole6,
-		setMole6
-	] = useState([
-		false
-	]);
-	const [
-		mole7,
-		setMole7
-	] = useState([
-		false
-	]);
-	const [
-		mole8,
-		setMole8
-	] = useState([
-		false
-	]);
-	const [
-		mole9,
-		setMole9
-	] = useState([
-		false
-	]);
-	const [
-		mole11,
-		setMole11
-	] = useState([
-		false
-	]);
-	const [
-		mole12,
-		setMole12
-	] = useState([
-		false
-	]);
-	const [
-		mole13,
-		setMole13
-	] = useState([
-		false
-	]);
-	const [
-		mole14,
-		setMole14
-	] = useState([
-		false
-	]);
-	const [
-		mole15,
-		setMole15
-	] = useState([
-		false
-	]);
-	const [
-		mole16,
-		setMole16
-	] = useState([
-		false
-	]);
-	const [
-		mole17,
-		setMole17
-	] = useState([
-		false
-	]);
-	const [
-		mole18,
-		setMole18
-	] = useState([
-		false
-	]);
-	const [
-		mole19,
-		setMole19
-	] = useState([
-		false
-	]);
-	const [
-		lastholes,
-		setLastHoles
-	] = useState({ idx1: 10, idx2: 10 });
-	// const [timeRemaining, setTime ] = useState(props.time);
+	const [moles, setMoles] = useState([false]);
+	const [mole1, setMole1] = useState([false]);
+	const [mole2, setMole2] = useState([false]);
+	const [mole3, setMole3] = useState([false]);
+	const [mole4, setMole4] = useState([false]);
+	const [mole5, setMole5] = useState([false]);
+	const [mole6, setMole6] = useState([false]);
+	const [mole7, setMole7] = useState([false]);
+	const [mole8, setMole8] = useState([false]);
+	const [mole9, setMole9] = useState([false]);
+	const [mole11, setMole11] = useState([false]);
+	const [mole12, setMole12] = useState([false]);
+	const [mole13, setMole13] = useState([false]);
+	const [mole14, setMole14] = useState([false]);
+	const [mole15, setMole15] = useState([false]);
+	const [mole16, setMole16] = useState([false]);
+	const [mole17, setMole17] = useState([false]);
+	const [mole18, setMole18] = useState([false]);
+	const [mole19, setMole19] = useState([false]);
+	const [lastholes, setLastHoles] = useState({ idx1: 10, idx2: 10 });
 
-    const [timer, setTimer ] = useState(10);
+    const [timer, setTimer ] = useState(20);
     const [playing, setPlaying ] = useState(false);
     const [score, setScore] = useState(0);
-		const [insults, setInsults] = useState([])
+	const [insults, setInsults] = useState([])
 
-		// grabs insults from API and sets state
-		useEffect(() => {
-			loadInsults()
-		}, [])
+	// grabs insults from API and sets state
+	useEffect(() => {
+		loadInsults()
+	}, [])
+
+	function loadInsults() {
+		API.getInsults()
+			.then(res => 
+				setInsults(res.data)
+			)
+		.catch(err => console.log(err));
+	}
+
+	function makeInsult() {
+		var insult = insults[Math.floor(Math.random() * insults.length)];
+			// console.log(insults)
+			// console.log(insult.content)
 	
-		function loadInsults() {
-			API.getInsults()
-				.then(res => 
-					setInsults(res.data)
-				)
-			.catch(err => console.log(err));
-		}
+			// text to speech declared here
+			var msg = new SpeechSynthesisUtterance();
+			msg.text = insult.content;
+	
+			// text-to-speech call
+			window.speechSynthesis.speak(msg);
+	}
+	// let insultsInterval;
 
-		const startInsults = () => {
-			// text-to-speech function, comment out entire function to avoid being insulted
-			setInterval(function() {
-
-				// choose a random insult
-				var insult = insults[Math.floor(Math.random() * insults.length)];
-				console.log(insults)
-				console.log(insult.content)
-
-				// text to speech declared here
-				var msg = new SpeechSynthesisUtterance();
-				msg.text = insult.content;
-
-				// text-to-speech call
-				window.speechSynthesis.speak(msg);
-			}, 6000);   // Interval set to 10 seconds, change to hear insults faster for testing 
-		}
+	// const startInsults = () => {
+	// 	insultsInterval = setInterval(function makeInsults() {
+	// 		// choose a random insult
+	// 		var insult = insults[Math.floor(Math.random() * insults.length)];
+	// 		// console.log(insults)
+	// 		// console.log(insult.content)
+	
+	// 		// text to speech declared here
+	// 		var msg = new SpeechSynthesisUtterance();
+	// 		msg.text = insult.content;
+	
+	// 		// text-to-speech call
+	// 		window.speechSynthesis.speak(msg);
+	// 	}, 4000);
+	// }
 
     const handleStartBtn = event => {
         if (playing === false) {
-        setTimer(10);
+        setTimer(20);
         setScore(0);
         setPlaying(true);
         setTimeout(() => setTimer(timer-1), 1000)
-				startInsults()
+		// startInsults()
         }
     }
 
@@ -184,50 +97,34 @@ function GameGrid(props) {
 
 	const handleClick2 = (event) => {
 		console.log(event.target);
-		let newScore = score + 1;
+		let newScore = score - 2;
 		setScore(newScore);
 	};
 
-	useEffect(
-		() => {
+	useEffect( () => {
 			if (timer > -1 && playing === true) {
 				setTimeout(() => setTimer(timer - 1), 1000);
-				// console.log(lastholes)
+				// console.log(`Timer: ${timer} Playing: ${playing}`)
 				setLastHoles(showMole(lastholes));
+				if (timer % 4 === 0) {
+					makeInsult();
+				}
 			}
 			else {
-				setTimer(10);
+				setTimer(20);
 				//other end game logic, reactions here
 				setPlaying(false);
 			}
-		},
-		[
-			timer
-		]
-	);
+		},[timer]);
 
-	// useEffect(() => {
-	//     updateTime(props.time);
-	//     console.log(timeRemaining);
-	//     }, [props.time])
-
-	// function updateTime(time) {
-	//     setTime(time);
-	// }
-
-	useEffect(
-		() => {
+	useEffect( () => {
 			if (playing === false) {
 				console.log(playing);
 			}
 			else if (playing === true) {
 				startGame();
 			}
-		},
-		[
-			playing
-		]
-	);
+		},[playing]);
 
 	function randomTime(min, max) {
 		return Math.floor(Math.random() * (max - min) + min);
@@ -238,32 +135,21 @@ function GameGrid(props) {
 		return index;
 	}
 
-	// function showMole(lastIndex) {
-	//     let idx = randomMole();
-	//     if (idx === lastIndex) {
-	//         return showMole(idx);
-	//     }
-	//     const moleArray = [...moles];
-	//     moleArray[idx] = true;
-	//     setMoles(moleArray);
-	//     setTimeout(() => setMoles(revertArray(moleArray, idx)), randomTime(1000,2000));
-	// }
-
 	function showMole(idxs) {
 		let idx1 = randomMole();
 		let idx2 = randomMole();
-		console.log(lastholes);
-		console.log(`idx1: ${idx1} idx2: ${idx2}`);
+		// console.log(lastholes);
+		// console.log(`idx1: ${idx1} idx2: ${idx2}`);
 		if (idx1 === idxs.idx1 || idx2 === idxs.idx2) {
-			console.log('idx1 = idxs.idx1 or idx2 = idxs.idx2');
+			// console.log('idx1 = idxs.idx1 or idx2 = idxs.idx2');
 			return showMole(lastholes);
 		}
 		else if (idx1 === idxs.idx2 || idx2 === idxs.idx1) {
-			console.log('idx2 = idxs.idx1 or idx1 = idxs.idx2');
+			// console.log('idx2 = idxs.idx1 or idx1 = idxs.idx2');
 			return showMole(lastholes);
 		}
 		if (idx2 === idx1) {
-			console.log('idx2 = idx1');
+			// console.log('idx2 = idx1');
 			return showMole(lastholes);
 		}
 		else {
@@ -342,52 +228,6 @@ function GameGrid(props) {
 		}
 		return { idx1: idx1, idx2: idx2 };
 	}
-
-	// function showMole() {
-	//     let idx = randomMole();
-	//     if (idx === 0) {
-	//         setMole11(true);
-	//         setTimeout(() => setMole1(false), randomTime(1000,2000));
-	//     }
-	//     if (idx === 1) {
-	//         setMole12(true);
-	//         setTimeout(() => setMole2(false), randomTime(1000,2000));
-	//     }
-	//     if (idx === 2) {
-	//         setMole13(true);
-	//         setTimeout(() => setMole3(false), randomTime(1000,2000));
-	//     }
-	//     if (idx === 3) {
-	//         setMole14(true);
-	//         setTimeout(() => setMole4(false), randomTime(1000,2000));
-	//     }
-	//     if (idx === 4) {
-	//         setMole15(true);
-	//         setTimeout(() => setMole5(false), randomTime(1000,2000));
-	//     }
-	//     if (idx === 5) {
-	//         setMole16(true);
-	//         setTimeout(() => setMole6(false), randomTime(1000,2000));
-	//     }
-	//     if (idx === 6) {
-	//         setMole17(true);
-	//         setTimeout(() => setMole7(false), randomTime(1000,2000));
-	//     }
-	//     if (idx === 7) {
-	//         setMole18(true);
-	//         setTimeout(() => setMole8(false), randomTime(1000,2000));
-	//     }
-	//     if (idx === 8) {
-	//         setMole19(true);
-	//         setTimeout(() => setMole9(false), randomTime(1000,2000));
-	//     }
-	// }
-
-	// function revertArray(array, index) {
-	//     const newArray = [...array];
-	//     newArray[index] = false;
-	//     return newArray;
-	// }
 
 	function startGame() {
 		console.log('test');
