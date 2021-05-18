@@ -2,7 +2,7 @@ import React from 'react';
 
 const HighScores = () => {
 	return (
-		<section className="high-scores">
+		<section className="highScores">
 			<div className="row">
 				<h1>HIGH SCORES</h1>
 				<hr />
