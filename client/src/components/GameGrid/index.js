@@ -163,7 +163,7 @@ function GameGrid(props) {
 
 				// text-to-speech call
 				window.speechSynthesis.speak(msg);
-			}, 4000);   // Interval set to 10 seconds, change to hear insults faster for testing 
+			}, 6000);   // Interval set to 10 seconds, change to hear insults faster for testing 
 		}
 
     const handleStartBtn = event => {
