@@ -7,7 +7,7 @@ import StartBtn from '../StartBtn';
 function CheckIn(props) {
 	return (
 		<p {...props} role="button" tabIndex="0">
-			<StartBtn />
+			<StartBtn buttonText={'Les Go'} />
 			<br />
 			{/* TODO:We need to get this route in order */}
 			<a href="#" className="wait">
