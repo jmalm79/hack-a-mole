@@ -5,7 +5,9 @@ import StartBtn from '../StartBtn';
 import '../Mole1';
 import Mole2 from '../Mole2';
 import Mole1 from '../Mole1';
-import Scoreboard from '../Scoreboard';
+import Scoreboard from "../Scoreboard";
+// import insult api
+import API from "../../utils/API";
 
 function GameGrid(props) {
 	const [
@@ -128,27 +130,51 @@ function GameGrid(props) {
 	] = useState({ idx1: 10, idx2: 10 });
 	// const [timeRemaining, setTime ] = useState(props.time);
 
-	const [
-		timer,
-		setTimer
-	] = useState(10);
-	const [
-		playing,
-		setPlaying
-	] = useState(false);
-	const [
-		score,
-		setScore
-	] = useState(0);
+    const [timer, setTimer ] = useState(10);
+    const [playing, setPlaying ] = useState(false);
+    const [score, setScore] = useState(0);
+		const [insults, setInsults] = useState([])
 
-	const handleStartBtn = (event) => {
-		if (playing === false) {
-			setTimer(10);
-			setScore(0);
-			setPlaying(true);
-			setTimeout(() => setTimer(timer - 1), 1000);
+		// grabs insults from API and sets state
+		useEffect(() => {
+			loadInsults()
+		}, [])
+	
+		function loadInsults() {
+			API.getInsults()
+				.then(res => 
+					setInsults(res.data)
+				)
+			.catch(err => console.log(err));
 		}
-	};
+
+		const startInsults = () => {
+			// text-to-speech function, comment out entire function to avoid being insulted
+			setInterval(function() {
+
+				// choose a random insult
+				var insult = insults[Math.floor(Math.random() * insults.length)];
+				console.log(insults)
+				console.log(insult.content)
+
+				// text to speech declared here
+				var msg = new SpeechSynthesisUtterance();
+				msg.text = insult.content;
+
+				// text-to-speech call
+				window.speechSynthesis.speak(msg);
+			}, 6000);   // Interval set to 10 seconds, change to hear insults faster for testing 
+		}
+
+    const handleStartBtn = event => {
+        if (playing === false) {
+        setTimer(10);
+        setScore(0);
+        setPlaying(true);
+        setTimeout(() => setTimer(timer-1), 1000)
+				startInsults()
+        }
+    }
 
 	const handleClick1 = (event) => {
 		console.log(event.target);
