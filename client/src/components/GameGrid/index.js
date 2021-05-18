@@ -90,13 +90,19 @@ function GameGrid(props) {
     }
 
 	const handleClick1 = (event) => {
-		console.log(event.target);
+		// console.log(event.target.dataset.index);
+		let index = parseInt(event.target.dataset.index);
+		// console.log(typeof(index));
+		// setTimeout(() => setVariableMole(index, false), 10);
+		setVariableMole(index, false);
 		let newScore = score + 5;
 		setScore(newScore);
 	};
 
 	const handleClick2 = (event) => {
-		console.log(event.target);
+		// console.log(event.target);
+		let index = parseInt(event.target.dataset.index);
+		setVariableMole(index, false);
 		let newScore = score - 2;
 		setScore(newScore);
 	};
@@ -135,6 +141,63 @@ function GameGrid(props) {
 		return index;
 	}
 
+	function setVariableMole(idx, bool) {
+		if (idx === 1) {
+			setMole1(bool);
+		}
+		if (idx === 2) {
+			setMole2(bool);	
+		}
+		if (idx === 3) {
+			setMole3(bool);	
+		}
+		if (idx === 4) {
+			setMole4(bool);
+		}
+		if (idx === 5) {
+			setMole5(bool);
+		}
+		if (idx === 6) {
+			setMole6(bool);
+		}
+		if (idx === 7) {
+			setMole7(bool);	
+		}
+		if (idx === 8) {
+			setMole8(bool);	
+		}
+		if (idx === 9) {
+			setMole9(bool);	
+		}
+		if (idx === 11) {
+			setMole11(bool);
+		}
+		if (idx === 12) {
+			setMole12(bool);
+		}
+		if (idx === 13) {
+			setMole13(bool);
+		}
+		if (idx === 14) {
+			setMole14(bool);
+		}
+		if (idx === 15) {
+			setMole15(bool);
+		}
+		if (idx === 16) {
+			setMole16(bool);
+		}
+		if (idx === 17) {
+			setMole17(bool);
+		}
+		if (idx === 18) {
+			setMole18(bool);
+		}
+		if (idx === 19) {
+			setMole19(bool);
+		}
+	}
+
 	function showMole(idxs) {
 		let idx1 = randomMole();
 		let idx2 = randomMole();
@@ -153,78 +216,83 @@ function GameGrid(props) {
 			return showMole(lastholes);
 		}
 		else {
-			if (idx1 === 0) {
-				setMole1(true);
-				setTimeout(() => setMole1(false), randomTime(1000, 2000));
-			}
-			if (idx1 === 1) {
-				setMole2(true);
-				setTimeout(() => setMole2(false), randomTime(1000, 2000));
-			}
-			if (idx1 === 2) {
-				setMole3(true);
-				setTimeout(() => setMole3(false), randomTime(1000, 2000));
-			}
-			if (idx1 === 3) {
-				setMole4(true);
-				setTimeout(() => setMole4(false), randomTime(1000, 2000));
-			}
-			if (idx1 === 4) {
-				setMole5(true);
-				setTimeout(() => setMole5(false), randomTime(1000, 2000));
-			}
-			if (idx1 === 5) {
-				setMole6(true);
-				setTimeout(() => setMole6(false), randomTime(1000, 2000));
-			}
-			if (idx1 === 6) {
-				setMole7(true);
-				setTimeout(() => setMole7(false), randomTime(1000, 2000));
-			}
-			if (idx1 === 7) {
-				setMole8(true);
-				setTimeout(() => setMole8(false), randomTime(1000, 2000));
-			}
-			if (idx1 === 8) {
-				setMole9(true);
-				setTimeout(() => setMole9(false), randomTime(1000, 2000));
-			}
-			if (idx2 === 0) {
-				setTimeout(() => setMole11(true), randomTime(200, 500));
-				setTimeout(() => setMole11(false), randomTime(1500, 2000));
-			}
-			if (idx2 === 1) {
-				setTimeout(() => setMole12(true), randomTime(200, 500));
-				setTimeout(() => setMole12(false), randomTime(1500, 2000));
-			}
-			if (idx2 === 2) {
-				setTimeout(() => setMole13(true), randomTime(200, 500));
-				setTimeout(() => setMole13(false), randomTime(1500, 2000));
-			}
-			if (idx2 === 3) {
-				setTimeout(() => setMole14(true), randomTime(200, 500));
-				setTimeout(() => setMole14(false), randomTime(1500, 2000));
-			}
-			if (idx2 === 4) {
-				setTimeout(() => setMole15(true), randomTime(200, 500));
-				setTimeout(() => setMole15(false), randomTime(1500, 2000));
-			}
-			if (idx2 === 5) {
-				setTimeout(() => setMole16(true), randomTime(200, 500));
-				setTimeout(() => setMole16(false), randomTime(1500, 2000));
-			}
-			if (idx2 === 6) {
-				setTimeout(() => setMole17(true), randomTime(200, 500));
-				setTimeout(() => setMole17(false), randomTime(1500, 2000));
-			}
-			if (idx2 === 7) {
-				setTimeout(() => setMole18(true), randomTime(200, 500));
-				setTimeout(() => setMole18(false), randomTime(1500, 2000));
-			}
-			if (idx2 === 8) {
-				setTimeout(() => setMole19(true), randomTime(200, 500));
-				setTimeout(() => setMole19(false), randomTime(1500, 2000));
-			}
+			setVariableMole(idx1 + 1, true);
+			setTimeout(() => setVariableMole(idx1 + 1, false), randomTime(1000, 2000));
+			setTimeout(() => setVariableMole(idx2 + 11, true), randomTime(200, 500));
+			setTimeout(() => setVariableMole(idx2 + 11, false), randomTime(1500, 2000));
+
+			// if (idx1 === 0) {
+			// 	setMole1(true);
+			// 	setTimeout(() => setMole1(false), randomTime(1000, 2000));
+			// }
+			// if (idx1 === 1) {
+			// 	setMole2(true);
+			// 	setTimeout(() => setMole2(false), randomTime(1000, 2000));
+			// }
+			// if (idx1 === 2) {
+			// 	setMole3(true);
+			// 	setTimeout(() => setMole3(false), randomTime(1000, 2000));
+			// }
+			// if (idx1 === 3) {
+			// 	setMole4(true);
+			// 	setTimeout(() => setMole4(false), randomTime(1000, 2000));
+			// }
+			// if (idx1 === 4) {
+			// 	setMole5(true);
+			// 	setTimeout(() => setMole5(false), randomTime(1000, 2000));
+			// }
+			// if (idx1 === 5) {
+			// 	setMole6(true);
+			// 	setTimeout(() => setMole6(false), randomTime(1000, 2000));
+			// }
+			// if (idx1 === 6) {
+			// 	setMole7(true);
+			// 	setTimeout(() => setMole7(false), randomTime(1000, 2000));
+			// }
+			// if (idx1 === 7) {
+			// 	setMole8(true);
+			// 	setTimeout(() => setMole8(false), randomTime(1000, 2000));
+			// }
+			// if (idx1 === 8) {
+			// 	setMole9(true);
+			// 	setTimeout(() => setMole9(false), randomTime(1000, 2000));
+			// }
+			// if (idx2 === 0) {
+			// 	setTimeout(() => setMole11(true), randomTime(200, 500));
+			// 	setTimeout(() => setMole11(false), randomTime(1500, 2000));
+			// }
+			// if (idx2 === 1) {
+			// 	setTimeout(() => setMole12(true), randomTime(200, 500));
+			// 	setTimeout(() => setMole12(false), randomTime(1500, 2000));
+			// }
+			// if (idx2 === 2) {
+			// 	setTimeout(() => setMole13(true), randomTime(200, 500));
+			// 	setTimeout(() => setMole13(false), randomTime(1500, 2000));
+			// }
+			// if (idx2 === 3) {
+			// 	setTimeout(() => setMole14(true), randomTime(200, 500));
+			// 	setTimeout(() => setMole14(false), randomTime(1500, 2000));
+			// }
+			// if (idx2 === 4) {
+			// 	setTimeout(() => setMole15(true), randomTime(200, 500));
+			// 	setTimeout(() => setMole15(false), randomTime(1500, 2000));
+			// }
+			// if (idx2 === 5) {
+			// 	setTimeout(() => setMole16(true), randomTime(200, 500));
+			// 	setTimeout(() => setMole16(false), randomTime(1500, 2000));
+			// }
+			// if (idx2 === 6) {
+			// 	setTimeout(() => setMole17(true), randomTime(200, 500));
+			// 	setTimeout(() => setMole17(false), randomTime(1500, 2000));
+			// }
+			// if (idx2 === 7) {
+			// 	setTimeout(() => setMole18(true), randomTime(200, 500));
+			// 	setTimeout(() => setMole18(false), randomTime(1500, 2000));
+			// }
+			// if (idx2 === 8) {
+			// 	setTimeout(() => setMole19(true), randomTime(200, 500));
+			// 	setTimeout(() => setMole19(false), randomTime(1500, 2000));
+			// }
 		}
 		return { idx1: idx1, idx2: idx2 };
 	}
@@ -247,56 +315,56 @@ function GameGrid(props) {
 			</div>
 			<div className="grid">
 				<Computer className="computer">
-					{mole1 === true && <Mole1 id="mole1-1" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole11 === true && <Mole2 id="mole2-1" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole1 === true && <Mole1 id="mole1-1" index="1" startGame={props.startGame} handleClick1={handleClick1} />}
+					{mole11 === true && <Mole2 id="mole2-1" index="11" startGame={props.startGame} handleClick2={handleClick2} />}
 					{/* <Mole1 id="mole1-1" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole2 === true && <Mole1 id="mole1-2" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole12 === true && <Mole2 id="mole2-2" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole2 === true && <Mole1 id="mole1-2" index="2" startGame={props.startGame} handleClick1={handleClick1} />}
+					{mole12 === true && <Mole2 id="mole2-2" index="12" startGame={props.startGame} handleClick2={handleClick2} />}
 					{/* <Mole1 id="mole1-2" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole3 === true && <Mole1 id="mole1-3" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole13 === true && <Mole2 id="mole2-3" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole3 === true && <Mole1 id="mole1-3" index="3" startGame={props.startGame} handleClick1={handleClick1} />}
+					{mole13 === true && <Mole2 id="mole2-3" index="13" startGame={props.startGame} handleClick2={handleClick2} />}
 					{/* <Mole1 id="mole1-3" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole4 === true && <Mole1 id="mole1-4" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole14 === true && <Mole2 id="mole2-4" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole4 === true && <Mole1 id="mole1-4" index="4" startGame={props.startGame} handleClick1={handleClick1} />}
+					{mole14 === true && <Mole2 id="mole2-4" index="14" startGame={props.startGame} handleClick2={handleClick2} />}
 					{/* <Mole1 id="mole1-4" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole5 === true && <Mole1 id="mole1-5" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole15 === true && <Mole2 id="mole2-5" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole5 === true && <Mole1 id="mole1-5" index="5" startGame={props.startGame} handleClick1={handleClick1} />}
+					{mole15 === true && <Mole2 id="mole2-5" index="15" startGame={props.startGame} handleClick2={handleClick2} />}
 					{/* <Mole1 id="mole1-5" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole6 === true && <Mole1 id="mole1-6" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole16 === true && <Mole2 id="mole2-6" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole6 === true && <Mole1 id="mole1-6" index="6" startGame={props.startGame} handleClick1={handleClick1} />}
+					{mole16 === true && <Mole2 id="mole2-6" index="16" startGame={props.startGame} handleClick2={handleClick2} />}
 					{/* <Mole1 id="mole1-5" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole7 === true && <Mole1 id="mole1-7" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole17 === true && <Mole2 id="mole2-7" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole7 === true && <Mole1 id="mole1-7" index="7" startGame={props.startGame} handleClick1={handleClick1} />}
+					{mole17 === true && <Mole2 id="mole2-7" index="17" startGame={props.startGame} handleClick2={handleClick2} />}
 					{/* <Mole1 id="mole1-5" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole8 === true && <Mole1 id="mole1-8" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole18 === true && <Mole2 id="mole2-8" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole8 === true && <Mole1 id="mole1-8" index="8" startGame={props.startGame} handleClick1={handleClick1} />}
+					{mole18 === true && <Mole2 id="mole2-8" index="18" startGame={props.startGame} handleClick2={handleClick2} />}
 					{/* <Mole1 id="mole1-5" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole9 === true && <Mole1 id="mole1-9" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole19 === true && <Mole2 id="mole2-9" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole9 === true && <Mole1 id="mole1-9" index="9" startGame={props.startGame} handleClick1={handleClick1} />}
+					{mole19 === true && <Mole2 id="mole2-9" index="19" startGame={props.startGame} handleClick2={handleClick2} />}
 					{/* <Mole1 id="mole1-5" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 			</div>
