@@ -6,6 +6,8 @@ import '../Mole1';
 import Mole2 from '../Mole2';
 import Mole1 from '../Mole1';
 import Scoreboard from "../Scoreboard";
+// import insult api
+import API from "../../utils/API";
 
 function GameGrid(props) {
 	const [
@@ -131,6 +133,38 @@ function GameGrid(props) {
     const [timer, setTimer ] = useState(10);
     const [playing, setPlaying ] = useState(false);
     const [score, setScore] = useState(0);
+		const [insults, setInsults] = useState([])
+
+		// grabs insults from API and sets state
+		useEffect(() => {
+			loadInsults()
+		}, [])
+	
+		function loadInsults() {
+			API.getInsults()
+				.then(res => 
+					setInsults(res.data)
+				)
+			.catch(err => console.log(err));
+		}
+
+		const startInsults = () => {
+			// text-to-speech function, comment out entire function to avoid being insulted
+			setInterval(function() {
+
+				// choose a random insult
+				var insult = insults[Math.floor(Math.random() * insults.length)];
+				console.log(insults)
+				console.log(insult.content)
+
+				// text to speech declared here
+				var msg = new SpeechSynthesisUtterance();
+				msg.text = insult.content;
+
+				// text-to-speech call
+				window.speechSynthesis.speak(msg);
+			}, 4000);   // Interval set to 10 seconds, change to hear insults faster for testing 
+		}
 
     const handleStartBtn = event => {
         if (playing === false) {
@@ -138,6 +172,7 @@ function GameGrid(props) {
         setScore(0);
         setPlaying(true);
         setTimeout(() => setTimer(timer-1), 1000)
+				startInsults()
         }
     }
 
