@@ -1,4 +1,5 @@
 import React from 'react';
+import HighScoreTable from '../../HighScoreTable'
 
 const HighScores = () => {
 	return (
@@ -6,6 +7,9 @@ const HighScores = () => {
 			<div className="row">
 				<h1>HIGH SCORES</h1>
 				<hr />
+<<<<<<< HEAD
+			<HighScoreTable />
+=======
 				<table>
 					<tbody>
 						<tr className="table-header">
@@ -36,6 +40,7 @@ const HighScores = () => {
 						{/* the above table row will be replaced by a component that we feed props, and in this file we are going to map over that component. We should also be taking in our high scores API data into this file. We could auto call the data in the useEffect */}
 					</tbody>
 				</table>
+>>>>>>> main
 			</div>
 		</section>
 	);
