@@ -262,6 +262,62 @@ p[role=button] {
 	height: 100%;
 	position: absolute;
 }
+
+/* 
+////// High Scores Table
+*/
+.highScores {
+	margin: 0 4%;
+}
+table {
+	width: 100%;
+}
+th {
+	text-transform: uppercase;
+	text-align: left;
+	color: var(--footer-link);
+	padding: 10px;
+	font-size: .9rem;
+	font-weight: bold;
+}
+th:last-child {
+	text-align: right;
+}
+tr {
+	background-color: var(--table-dark);
+}
+tr:nth-child(odd) {
+	background-color: var(--table-light);
+}
+tr.table-header {
+	background-color: transparent;
+	font-size: 1rem;
+}
+td {
+	padding: 20px 10px;
+	font-weight: 900;
+}
+td.position {
+	color: var(--footer-link);
+	padding-left: 25px;
+}
+td.name {
+	color: var(--purple);
+	-webkit-text-stroke: 1px white;
+	text-shadow: 2px 2px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+}
+td.score {
+	color: var(--pink);
+	text-shadow: 2px 2px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+	text-align: right;
+	padding-right: 15px;
+}
+/* 
+////// Instructions - stuff like ol's and schtuff
+*/
+
 /* 
 //////Footer
 */
@@ -277,4 +333,42 @@ footer {
 footer .github a {
 	color: var(--footer-link);
 	text-decoration: none;
+}
+.instructions {
+	padding: 10px 4%;
+}
+.instructions p {
+	line-height: 1.8rem;
+	font-size: 1.2rem;
+	font-weight: normal;
+}
+
+ol li {
+}
+.rules {
+	counter-reset: my-badass-counter;
+	margin: 40px 4% 15px;
+}
+.rules dt:before {
+	content: counter(my-badass-counter);
+	counter-increment: my-badass-counter;
+	color: var(--pink);
+	text-shadow: 4px 4px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+	font-weight: 900;
+	float: left;
+	min-width: 40px;
+	text-align: right;
+	font-size: 4rem;
+	padding: 0 25px 20px 0;
+	margin-top: -10px;
+}
+dt {
+	color: var(--purple);
+	font-weight: 600;
+	font-size: 1.2rem;
+	padding: 10px 5px;
+	clear: both;
+}
+dd {
+	font-size: .9rem;
 }

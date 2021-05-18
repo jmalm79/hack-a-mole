@@ -12,7 +12,7 @@ function Footer() {
 			<span className="github">
 				View on{' '}
 				<a
-					class="nav-link"
+					className="nav-link"
 					href="https://github.com/jmalm79/hack-a-mole"
 					target="_blank"
 					rel="noopener noreferrer"
