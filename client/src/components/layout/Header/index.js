@@ -10,8 +10,8 @@ function Header() {
 		<>
 		<header>
 			<a href="#" className="logo">
-				<img src={Logo} alt="This is heckles. Hes tired of your sh*t" />
-				<span>This is Heckles; he's tired of your shit.</span>
+				<img src={Logo} alt="This is heckles the mascot; He's tired of your crap." />
+				<span>This is Heckles; he's tired of your crap.</span>
 			</a>
 			<nav>
 				<ul className="nav">

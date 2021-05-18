@@ -5,7 +5,7 @@ import StartBtn from '../StartBtn';
 import '../Mole1';
 import Mole2 from '../Mole2';
 import Mole1 from '../Mole1';
-import Scoreboard from "../Scoreboard";
+import Scoreboard from '../Scoreboard';
 
 function GameGrid(props) {
 	const [
@@ -128,30 +128,39 @@ function GameGrid(props) {
 	] = useState({ idx1: 10, idx2: 10 });
 	// const [timeRemaining, setTime ] = useState(props.time);
 
-    const [timer, setTimer ] = useState(10);
-    const [playing, setPlaying ] = useState(false);
-    const [score, setScore] = useState(0);
+	const [
+		timer,
+		setTimer
+	] = useState(10);
+	const [
+		playing,
+		setPlaying
+	] = useState(false);
+	const [
+		score,
+		setScore
+	] = useState(0);
 
-    const handleStartBtn = event => {
-        if (playing === false) {
-        setTimer(10);
-        setScore(0);
-        setPlaying(true);
-        setTimeout(() => setTimer(timer-1), 1000)
-        }
-    }
+	const handleStartBtn = (event) => {
+		if (playing === false) {
+			setTimer(10);
+			setScore(0);
+			setPlaying(true);
+			setTimeout(() => setTimer(timer - 1), 1000);
+		}
+	};
 
-    const handleClick1 = event => {
-        console.log(event.target);
-        let newScore = score + 5
-        setScore(newScore);
-    }
+	const handleClick1 = (event) => {
+		console.log(event.target);
+		let newScore = score + 5;
+		setScore(newScore);
+	};
 
-    const handleClick2 = event => {
-        console.log(event.target);
-        let newScore = score + 1;
-        setScore(newScore);
-    }
+	const handleClick2 = (event) => {
+		console.log(event.target);
+		let newScore = score + 1;
+		setScore(newScore);
+	};
 
 	useEffect(
 		() => {
@@ -366,6 +375,7 @@ function GameGrid(props) {
 
 				<p className="start-btn">
 					<StartBtn handleStartBtn={handleStartBtn} />
+					{/* TODO: This needs to match the other button at the bottom of scores */}
 				</p>
 				<Timer time={timer} />
 			</div>
