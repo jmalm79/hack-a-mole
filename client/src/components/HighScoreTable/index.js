@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTable } from 'react-table'
 import API from '../../utils/API'
 
-import Highscores from '../../../../controllers/highscoresController'
-
-
 
 function Table({ columns, data }) {
-  const {
+    const [highscores, setHighscores] = useState([])
+    useEffect(() => {
+        loadHighscores()
+    }, [])
+    function loadHighscores() {
+        API.getHighscores()
+        .then(res => 
+            setHighscores(res.data)
+        )
+        .catch(err => console.log(err));
+    }
+    console.log(highscores);
+    
+    
+    
+    const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
@@ -70,4 +82,4 @@ function HighScoreTable() {
   )
 }
 
-export default HighScoreTable
+export default HighScoreTable;
