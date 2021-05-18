@@ -266,6 +266,57 @@ p[role=button] {
 /* 
 ////// High Scores Table
 */
+.high-scores {
+	margin: 0 4%;
+}
+table {
+	width: 100%;
+}
+th {
+	text-transform: uppercase;
+	text-align: left;
+	color: var(--footer-link);
+	padding: 10px;
+	font-size: .9rem;
+	font-weight: bold;
+}
+th:last-child {
+	text-align: right;
+}
+tr {
+	background-color: var(--table-dark);
+}
+tr:nth-child(odd) {
+	background-color: var(--table-light);
+}
+tr.table-header {
+	background-color: transparent;
+	font-size: 1rem;
+}
+td {
+	padding: 20px 10px;
+	font-weight: 900;
+}
+td.position {
+	color: var(--footer-link);
+	padding-left: 25px;
+}
+td.name {
+	color: var(--purple);
+	-webkit-text-stroke: 1px white;
+	text-shadow: 2px 2px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+}
+td.score {
+	color: var(--pink);
+	text-shadow: 2px 2px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+	text-align: right;
+	padding-right: 15px;
+}
+/* 
+////// Instructions - stuff like ol's and shit
+*/
 
 /* 
 //////Footer
