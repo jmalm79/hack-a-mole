@@ -55,7 +55,7 @@ db.Phrase
 
 db.Highscore
 .remove({})
-.then(() => db.ighscore.collection.insertMany(highscoreSeed))
+.then(() => db.Highscore.collection.insertMany(highscoreSeed))
 .then(data => {
   console.log(data.result.n + " records inserted!");
   process.exit(0);
