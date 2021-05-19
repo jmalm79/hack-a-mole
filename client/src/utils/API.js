@@ -9,8 +9,8 @@ export default {
   getHighscores: function() {
     return axios.get("/api/highscores")
   },
-  newHighscore: function() {
-    return axios.post("/api/highscores")
+  newHighscore: function(scoreData) {
+    return axios.post("/api/highscores, scoreData")
   }
   // require in this file as something like this 
   // import API from "../../utils/API";

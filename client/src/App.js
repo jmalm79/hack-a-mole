@@ -5,6 +5,7 @@ import Header from './components/layout/Header';
 import Game from './components/layout/Game';
 import HighScores from './components/layout/HighScores';
 import Instructions from './components/layout/Instructions';
+import NewHighScore from './components/Form';
 // import {
 //   BrowserRouter as Router,
 //   Route,
@@ -46,6 +47,7 @@ function App() {
 			<Header />
 			<Game />
 			<HighScores />
+			<NewHighScore />
 			<Instructions />
 			<Footer />
 		</div>
