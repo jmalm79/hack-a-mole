@@ -1,5 +1,8 @@
 import React from 'react';
 import StartBtn from '../../StartBtn';
+import { BrowserRouter as Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Game from './../Game'
 
 const Instructions = () => {
 	return (
@@ -35,7 +38,8 @@ const Instructions = () => {
 				</dl>
 
 				<p className="start-btn">
-					<StartBtn subText={'(Back to Start)'} buttonText={'OK Lets Play'} />
+					<Route exact path="/play" component={Game} />
+					<Link to="/play"><StartBtn subText={'(Back to Start)'} buttonText={'OK Lets Play'} /></Link>
 				</p>
 			</div>
 		</section>
