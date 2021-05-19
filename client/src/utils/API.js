@@ -8,5 +8,12 @@ export default {
   },
   getHighscores: function() {
     return axios.get("/api/highscores")
+  },
+  newHighscore: function() {
+    return axios.post("/api/highscores")
   }
+  // require in this file as something like this 
+  // import API from "../../utils/API";
+
+  // API.newHighscore(data) will post the new highscore
 }

@@ -4,8 +4,8 @@ import GageHead from './../../images/gageHead.png';
 
 function Mole1(props) {
 	return (
-		<div className="mole2" id={props.id} onClick={props.handleClick2}>
-			<img src={GageHead} alt="Silly head of our TA, hit him and lose points" />
+		<div className="mole2" id={props.id} index={props.index} onClick={props.handleClick2}>
+			<img data-index={props.index} src={GageHead} alt="Silly head of our TA, hit him and lose points" />
 		</div>
 	);
 }
