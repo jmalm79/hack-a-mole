@@ -12,7 +12,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 function Header() {
 
 	const [shareState, setShareState] = useState({
-		visible: false
+		visible: "false"
 	});
 
 	const handleVisibility = () => {
