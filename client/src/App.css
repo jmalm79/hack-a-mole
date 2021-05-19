@@ -199,6 +199,9 @@ p[role=button] {
 	display: block;
 	text-align: center;
 }
+.wait:visited {
+	text-decoration: none;
+}
 /* 
 //////computers
 */

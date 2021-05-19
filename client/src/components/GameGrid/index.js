@@ -5,10 +5,11 @@ import StartBtn from '../StartBtn';
 import '../Mole1';
 import Mole2 from '../Mole2';
 import Mole1 from '../Mole1';
-
 import Scoreboard from "../Scoreboard";
 import GameOver from '../GameOver';
-
+import { BrowserRouter as Route } from "react-router-dom";
+import InstructionsLink from "../InstructionsLink"
+import Instructions from "../layout/Instructions"
 import theme from '../../audio/HAMmainTheme.mp3'
 
 // import insult api
@@ -290,6 +291,8 @@ function GameGrid(props) {
 						handleStartBtn={handleStartBtn}
 					/>
 					{/* TODO: This needs to match the other button at the bottom of scores */}
+					<Route exact path="/instructions" component={Instructions} />
+					<InstructionsLink />
 				</p>
 				<Timer time={timer} />
 			</div>
