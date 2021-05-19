@@ -261,9 +261,6 @@ function GameGrid(props) {
 	}
 
 	function playAudio() {
-		// const audioEl = document.getElementsByClassName("themeMusic")[0].childNodes[0];
-		// console.log(audioEl);
-		// audioEl.play();
 		const audioElement = new Audio(theme);
 		audioElement.play();
 		return;
@@ -336,9 +333,6 @@ function GameGrid(props) {
 				</Computer>
 
 				{gameover === true && <GameOver score={score} PlayAgain={PlayAgain}/>}
-				<audio className="themeMusic">
-					<source src="../../audio/HAMmainTheme.mp3"></source>
-				</audio>
 			</div>
 		</div>
 	);

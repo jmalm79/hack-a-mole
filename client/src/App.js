@@ -47,7 +47,6 @@ function App() {
 			<Header />
 			<Game />
 			<HighScores />
-			<NewHighScore />
 			<Instructions />
 			<Footer />
 		</div>
