@@ -199,6 +199,9 @@ p[role=button] {
 	display: block;
 	text-align: center;
 }
+.wait:visited {
+	text-decoration: none;
+}
 /* 
 //////computers
 */
@@ -394,7 +397,7 @@ dd {
 }
 .game-over .buttons {
 	display: flex;
-	flex-direction: row-reverse;
+	justify-content: center;
 	margin: 50px 0 0;
 }
 .game-over button {
@@ -405,18 +408,52 @@ dd {
 .game-over button:hover {
 	opacity: .8;
 }
-.game-over .play-again {
+.game-over .btn {
 	border-radius: 6px;
-	background-color: var(--blue);
-	color: white;
 	padding: 10px 15px;
+	color: white;
+}
+.game-over .play-again {
+	background-color: var(--blue);
 }
 .game-over .submit-score {
-	border-radius: 6px;
 	background-color: var(--purple);
-	color: white;
-	padding: 10px 15px;
 	margin-left: 20px;
+}
+.game-over .score {
+	font-weight: 900;
+	-webkit-text-stroke: 1px white;
+	text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+	color: var(--orange);
+}
+.game-over h3 {
+	color: var(--off-white);
+	display: block;
+	padding: 25px 0;
+}
+.game-over input[type=text] {
+	width: 100%;
+	border-radius: 5px;
+	background-color: #545454;
+	line-height: 2rem;
+	padding: 15px 30px;
+	font-size: 1.2rem;
+	border: none;
+	color: white;
+}
+.game-over .submit {
+	color: white;
+	background-color: var(--orange);
+	padding: 15px 35px;
+	margin: 10px auto;
+	text-transform: upper;
+}
+.game-over label {
+	color: white;
+	margin-bottom: 5px;
+	font-size: .8rem;
+	text-transform: uppercase;
+	font-weight: 600;
 }
 
 /* 
