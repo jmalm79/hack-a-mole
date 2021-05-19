@@ -31,7 +31,7 @@ function Header() {
 						</Link>
 					</li>
 					<li className="share">
-						<Link to="#">
+						<Link to="/share">
 							<FontAwesomeIcon icon={faHeart} />
 							Share
 						</Link>
