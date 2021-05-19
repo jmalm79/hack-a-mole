@@ -120,7 +120,8 @@ function GameGrid(props) {
 		// console.log(event.target);
 		let index = parseInt(event.target.dataset.index);
 		setVariableMole(index, false);
-		let newScore = score - 2;
+		let rando = Math.floor(Math.random() * 13 - 5);
+		let newScore = score - rando;
 		setScore(newScore);
 		notGage();
 	};
@@ -143,6 +144,7 @@ function GameGrid(props) {
 
 	useEffect( () => {
 			if (playing === false) {
+				return;
 				console.log(playing);
 			}
 			else if (playing === true) {
@@ -235,7 +237,7 @@ function GameGrid(props) {
 		}
 		else {
 			setVariableMole(idx1 + 1, true);
-			setTimeout(() => setVariableMole(idx1 + 1, false), randomTime(1000, 2000));
+			setTimeout(() => setVariableMole(idx1 + 1, false), randomTime(400, 1200));
 			setTimeout(() => setVariableMole(idx2 + 11, true), randomTime(200, 500));
 			setTimeout(() => setVariableMole(idx2 + 11, false), randomTime(1500, 2000));
 
@@ -316,7 +318,7 @@ function GameGrid(props) {
 	}
 
 	function startGame() {
-		console.log('test');
+		// console.log('test');
 		setTimeout(() => setLastHoles(showMole({ idx1: 10, idx2: 10 })), randomTime(50, 1000));
 	}
 
