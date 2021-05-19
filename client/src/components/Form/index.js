@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import API from '../../utils/API';
 
 function AddHighScore(props) {
-	const [
-		formObject,
-		setFormObject
-	] = useState({});
+	const [formObject, setFormObject] = useState({});
 
 	function handleInputChange(event) {
 		const { name, value } = event.target;
@@ -15,10 +12,12 @@ function AddHighScore(props) {
 	function handleFormSubmit(event) {
 		event.preventDefault();
 		if (formObject.name && props.score) {
+			console.log("test")
 			API.newHighscore({
 				name  : formObject.name,
 				score : props.score
 			}).catch((err) => console.log(err));
+			PlayAgain();
 		}
 	}
 
@@ -39,11 +38,8 @@ function AddHighScore(props) {
 			<button
 				className={'btn submit'}
 				type="submit"
-				disabled={!(formObject.name && props.score)}
-				onClick={() => {
-					handleFormSubmit();
-					PlayAgain();
-				}}
+				disabled={!(formObject.name)}
+				onClick={handleFormSubmit}
 			>
 				Save
 			</button>
