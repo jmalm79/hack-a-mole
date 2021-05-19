@@ -16,7 +16,7 @@ const Game = () => {
 				<section className="game-board">
 					<GameGrid />
 				</section>
-				<GameOver />
+				{/* <GameOver /> */}
 			</div>
 		</section>
 	);
