@@ -7,6 +7,7 @@ import Mole2 from '../Mole2';
 import Mole1 from '../Mole1';
 import Scoreboard from "../Scoreboard";
 import GameOver from '../GameOver';
+import theme from '../../audio/HAMmainTheme.mp3'
 // import insult api
 import API from "../../utils/API";
 
@@ -32,7 +33,7 @@ function GameGrid(props) {
 	const [mole19, setMole19] = useState([false]);
 	const [lastholes, setLastHoles] = useState({ idx1: 10, idx2: 10 });
 
-    const [timer, setTimer ] = useState(20);
+    const [timer, setTimer ] = useState(30);
     const [playing, setPlaying ] = useState(false);
     const [score, setScore] = useState(0);
 	const [insults, setInsults] = useState([]);
@@ -83,7 +84,7 @@ function GameGrid(props) {
 
     const handleStartBtn = event => {
         if (playing === false) {
-        setTimer(20);
+        setTimer(30);
         setScore(0);
         setPlaying(true);
         setTimeout(() => setTimer(timer-1), 1000)
@@ -141,7 +142,7 @@ function GameGrid(props) {
 				if (timer === -1) {
 					setGameover(true);
 				}
-				setTimer(20);
+				setTimer(30);
 				//other end game logic, reactions here
 				setPlaying(false);
 			}
@@ -252,11 +253,21 @@ function GameGrid(props) {
 	function startGame() {
 		// console.log('test');
 		setTimeout(() => setLastHoles(showMole({ idx1: 10, idx2: 10 })), randomTime(50, 1000));
+		playAudio();
 	}
 
 	function PlayAgain() {
 		setGameover(false);
 	}
+
+	function playAudio() {
+		// const audioEl = document.getElementsByClassName("themeMusic")[0].childNodes[0];
+		// console.log(audioEl);
+		// audioEl.play();
+		const audioElement = new Audio(theme);
+		audioElement.play();
+		return;
+	  }
 
 	return (
 		<div className="game">
@@ -325,6 +336,9 @@ function GameGrid(props) {
 				</Computer>
 
 				{gameover === true && <GameOver score={score} PlayAgain={PlayAgain}/>}
+				<audio className="themeMusic">
+					<source src="../../audio/HAMmainTheme.mp3"></source>
+				</audio>
 			</div>
 		</div>
 	);
