@@ -227,13 +227,10 @@ p[role=button] {
 }
 
 .mole1:hover {
-	cursor: url('https://cdn0.iconfinder.com/data/icons/electricity-and-functional-elements/512/keyboard-key-trash-garbage-delete-files-128.png')
-			50 50,
-		auto;
+	cursor: url('https://arrow.drewolsen.dev/wp-content/uploads/squirrelHammer-1.png') 43 35, auto;
 }
 .mole2:hover {
-	cursor: url('https://cdn4.iconfinder.com/data/icons/keyboard-solid-style/24/keyboard-key-delete-128.png') 50 50,
-		auto;
+	cursor: url('https://arrow.drewolsen.dev/wp-content/uploads/squirrelHammer-1.png') 86 71, auto;
 }
 
 .box .mole1 img,
