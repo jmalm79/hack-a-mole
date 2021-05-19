@@ -1,6 +1,5 @@
 import React from 'react';
 import GameGrid from './../../GameGrid';
-import GameOver from '../../GameOver';
 
 const Game = () => {
 	return (
@@ -16,7 +15,6 @@ const Game = () => {
 				<section className="game-board">
 					<GameGrid />
 				</section>
-				{/* <GameOver /> */}
 			</div>
 		</section>
 	);
