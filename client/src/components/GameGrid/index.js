@@ -10,6 +10,8 @@ import GameOver from '../GameOver';
 import { BrowserRouter as Route } from "react-router-dom";
 import InstructionsLink from "../InstructionsLink"
 import Instructions from "../layout/Instructions"
+import theme from '../../audio/HAMmainTheme.mp3'
+
 // import insult api
 import API from '../../utils/API';
 
@@ -36,7 +38,7 @@ function GameGrid(props) {
 	const [mole19, setMole19] = useState([false]);
 	const [lastholes, setLastHoles] = useState({ idx1: 10, idx2: 10 });
 
-    const [timer, setTimer ] = useState(20);
+    const [timer, setTimer ] = useState(30);
     const [playing, setPlaying ] = useState(false);
     const [score, setScore] = useState(0);
 	const [insults, setInsults] = useState([]);
@@ -81,15 +83,17 @@ function GameGrid(props) {
 	// 	}, 4000);
 	// }
 
-	const handleStartBtn = (event) => {
-		if (playing === false) {
-			setTimer(20);
-			setScore(0);
-			setPlaying(true);
-			setTimeout(() => setTimer(timer - 1), 1000);
-			// startInsults()
-		}
-	};
+
+    const handleStartBtn = event => {
+        if (playing === false) {
+        setTimer(30);
+        setScore(0);
+        setPlaying(true);
+        setTimeout(() => setTimer(timer-1), 1000)
+		// startInsults()
+        }
+    }
+
 
 	function queso() {
 		var msg = new SpeechSynthesisUtterance();
@@ -142,7 +146,7 @@ function GameGrid(props) {
 				if (timer === -1) {
 					setGameover(true);
 				}
-				setTimer(20);
+				setTimer(30);
 				//other end game logic, reactions here
 				setPlaying(false);
 			}
@@ -262,11 +266,18 @@ function GameGrid(props) {
 	function startGame() {
 		// console.log('test');
 		setTimeout(() => setLastHoles(showMole({ idx1: 10, idx2: 10 })), randomTime(50, 1000));
+		playAudio();
 	}
 
 	function PlayAgain() {
 		setGameover(false);
 	}
+
+	function playAudio() {
+		const audioElement = new Audio(theme);
+		audioElement.play();
+		return;
+	  }
 
 	return (
 		<div className="game">

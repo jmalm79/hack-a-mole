@@ -28,10 +28,9 @@ const Instructions = () => {
 					<dd>Press the Start button to join the session.</dd>
 
 					<dt>Game Play</dt>
-					<dd>
-						A count down timer will start, Hack (click) on each Instructor to gain 5 points, note: clicking
-						on a T/A will lose points.{' '}
-					</dd>
+
+					<dd>A count down timer will start, Hack (click) on each Instructor to gain 5 points, note: clicking on a T/A may result in lost points. </dd>
+
 
 					<dt>Log your Score.</dt>
 					<dd>Show off your highscore by logging your name.</dd>
