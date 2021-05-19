@@ -10,6 +10,7 @@
 	--table-dark: #cdcdcd;
 	--table-light: #d4d4d4;
 	--dark-blue: #082a67;
+	--game-over-bkg: #383838;
 }
 * {
 	box-sizing: border-box;
@@ -20,6 +21,16 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
 	color: #333;
+}
+
+p {
+	margin-bottom: 20px;
+}
+.hackamole {
+	font-weight: 900;
+	color: var(--pink);
+	-webkit-text-stroke: 1px white;
+	text-shadow: 4px 4px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
 
 h1,
@@ -157,9 +168,8 @@ span.timer {
 	border: none;
 	border-radius: 10px;
 	transition: all .2s ease-in-out;
-	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028),
-		0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
-		0 100px 80px rgba(0, 0, 0, 0.07);
+	box-shadow: 0 2.2px 1.6px rgba(0, 0, 0, 0.024), 0 6.1px 4.5px rgba(0, 0, 0, 0.035),
+		0 14.8px 10.9px rgba(0, 0, 0, 0.046), 0 49px 36px rgba(0, 0, 0, 0.07);
 }
 .start span {
 	color: var(--dark-blue);
@@ -317,23 +327,6 @@ td.score {
 /* 
 ////// Instructions - stuff like ol's and schtuff
 */
-
-/* 
-//////Footer
-*/
-footer {
-	color: var(--footer-text);
-	font-size: .8rem;
-	display: flex;
-	font-weight: bold;
-	width: 100%;
-	justify-content: space-between;
-	padding: 4% 20px;
-}
-footer .github a {
-	color: var(--footer-link);
-	text-decoration: none;
-}
 .instructions {
 	padding: 10px 4%;
 }
@@ -343,8 +336,6 @@ footer .github a {
 	font-weight: normal;
 }
 
-ol li {
-}
 .rules {
 	counter-reset: my-badass-counter;
 	margin: 40px 4% 15px;
@@ -371,4 +362,76 @@ dt {
 }
 dd {
 	font-size: .9rem;
+}
+
+/* 
+////// Game Over
+*/
+.game-over {
+	background-color: var(--game-over-bkg);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 10px;
+	padding: 40px;
+	z-index: 100;
+	box-shadow: 0 4.6px 2.2px rgba(0, 0, 0, 0.022), 0 11.1px 5.3px rgba(0, 0, 0, 0.032),
+		0 20.9px 10px rgba(0, 0, 0, 0.04), 0 37.3px 17.9px rgba(0, 0, 0, 0.048), 0 69.8px 33.4px rgba(0, 0, 0, 0.058),
+		0 167px 80px rgba(0, 0, 0, 0.08);
+}
+.game-over h2 {
+	color: var(--yellow);
+	text-align: center;
+	font-size: 2.4rem;
+	font-weight: 900;
+	-webkit-text-stroke: 1px white;
+	text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+	margin-bottom: 20px;
+}
+.game-over p {
+	color: var(--off-white);
+}
+.game-over .buttons {
+	display: flex;
+	flex-direction: row-reverse;
+	margin: 50px 0 0;
+}
+.game-over button {
+	margin: 0 10px;
+	border: none;
+	cursor: pointer;
+}
+.game-over button:hover {
+	opacity: .8;
+}
+.game-over .play-again {
+	border-radius: 6px;
+	background-color: var(--blue);
+	color: white;
+	padding: 10px 15px;
+}
+.game-over .submit-score {
+	border-radius: 6px;
+	background-color: var(--purple);
+	color: white;
+	padding: 10px 15px;
+	margin-left: 20px;
+}
+
+/* 
+//////Footer
+*/
+footer {
+	color: var(--footer-text);
+	font-size: .8rem;
+	display: flex;
+	font-weight: bold;
+	width: 100%;
+	justify-content: space-between;
+	padding: 4% 20px;
+}
+footer .github a {
+	color: var(--footer-link);
+	text-decoration: none;
 }
