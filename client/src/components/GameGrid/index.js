@@ -5,13 +5,17 @@ import StartBtn from '../StartBtn';
 import '../Mole1';
 import Mole2 from '../Mole2';
 import Mole1 from '../Mole1';
+
 import Scoreboard from "../Scoreboard";
 import GameOver from '../GameOver';
+
 import theme from '../../audio/HAMmainTheme.mp3'
+
 // import insult api
-import API from "../../utils/API";
+import API from '../../utils/API';
 
 function GameGrid(props) {
+
 	const [moles, setMoles] = useState([false]);
 	const [mole1, setMole1] = useState([false]);
 	const [mole2, setMole2] = useState([false]);
@@ -41,28 +45,24 @@ function GameGrid(props) {
 
 	// grabs insults from API and sets state
 	useEffect(() => {
-		loadInsults()
-	}, [])
+		loadInsults();
+	}, []);
 
 	function loadInsults() {
-		API.getInsults()
-			.then(res => 
-				setInsults(res.data)
-			)
-		.catch(err => console.log(err));
+		API.getInsults().then((res) => setInsults(res.data)).catch((err) => console.log(err));
 	}
 
 	function makeInsult() {
 		var insult = insults[Math.floor(Math.random() * insults.length)];
-			// console.log(insults)
-			// console.log(insult.content)
-	
-			// text to speech declared here
-			var msg = new SpeechSynthesisUtterance();
-			msg.text = insult.content;
-	
-			// text-to-speech call
-			window.speechSynthesis.speak(msg);
+		// console.log(insults)
+		// console.log(insult.content)
+
+		// text to speech declared here
+		var msg = new SpeechSynthesisUtterance();
+		msg.text = insult.content;
+
+		// text-to-speech call
+		window.speechSynthesis.speak(msg);
 	}
 	// let insultsInterval;
 
@@ -72,15 +72,16 @@ function GameGrid(props) {
 	// 		var insult = insults[Math.floor(Math.random() * insults.length)];
 	// 		// console.log(insults)
 	// 		// console.log(insult.content)
-	
+
 	// 		// text to speech declared here
 	// 		var msg = new SpeechSynthesisUtterance();
 	// 		msg.text = insult.content;
-	
+
 	// 		// text-to-speech call
 	// 		window.speechSynthesis.speak(msg);
 	// 	}, 4000);
 	// }
+
 
     const handleStartBtn = event => {
         if (playing === false) {
@@ -92,20 +93,21 @@ function GameGrid(props) {
         }
     }
 
+
 	function queso() {
 		var msg = new SpeechSynthesisUtterance();
-			msg.text = "Queso";
-	
-			// text-to-speech call
-			window.speechSynthesis.speak(msg);
+		msg.text = 'Queso';
+
+		// text-to-speech call
+		window.speechSynthesis.speak(msg);
 	}
 
 	function notGage() {
 		var msg = new SpeechSynthesisUtterance();
-			msg.text = "Don't delete Gage!";
-	
-			// text-to-speech call
-			window.speechSynthesis.speak(msg);
+		msg.text = "Don't delete Gage!";
+
+		// text-to-speech call
+		window.speechSynthesis.speak(msg);
 	}
 
 	const handleClick1 = (event) => {
@@ -129,7 +131,8 @@ function GameGrid(props) {
 		notGage();
 	};
 
-	useEffect( () => {
+	useEffect(
+		() => {
 			if (timer > -1 && playing === true) {
 				setTimeout(() => setTimer(timer - 1), 1000);
 				// console.log(`Timer: ${timer} Playing: ${playing}`)
@@ -146,9 +149,14 @@ function GameGrid(props) {
 				//other end game logic, reactions here
 				setPlaying(false);
 			}
-		},[timer]);
+		},
+		[
+			timer
+		]
+	);
 
-	useEffect( () => {
+	useEffect(
+		() => {
 			if (playing === false) {
 				return;
 				console.log(playing);
@@ -156,7 +164,11 @@ function GameGrid(props) {
 			else if (playing === true) {
 				startGame();
 			}
-		},[playing]);
+		},
+		[
+			playing
+		]
+	);
 
 	function randomTime(min, max) {
 		return Math.floor(Math.random() * (max - min) + min);
@@ -172,10 +184,10 @@ function GameGrid(props) {
 			setMole1(bool);
 		}
 		if (idx === 2) {
-			setMole2(bool);	
+			setMole2(bool);
 		}
 		if (idx === 3) {
-			setMole3(bool);	
+			setMole3(bool);
 		}
 		if (idx === 4) {
 			setMole4(bool);
@@ -187,13 +199,13 @@ function GameGrid(props) {
 			setMole6(bool);
 		}
 		if (idx === 7) {
-			setMole7(bool);	
+			setMole7(bool);
 		}
 		if (idx === 8) {
-			setMole8(bool);	
+			setMole8(bool);
 		}
 		if (idx === 9) {
-			setMole9(bool);	
+			setMole9(bool);
 		}
 		if (idx === 11) {
 			setMole11(bool);
@@ -275,63 +287,103 @@ function GameGrid(props) {
 				<Scoreboard score={score} />
 
 				<p className="start-btn">
-					<StartBtn subText="(Start The Game)" buttonText="Check-In To Class" handleStartBtn={handleStartBtn} />
+					<StartBtn
+						subText="(Start The Game)"
+						buttonText="Check-In To Class"
+						handleStartBtn={handleStartBtn}
+					/>
 					{/* TODO: This needs to match the other button at the bottom of scores */}
 				</p>
 				<Timer time={timer} />
 			</div>
 			<div className="grid">
 				<Computer className="computer">
-					{mole1 === true && <Mole1 id="mole1-1" index="1" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole11 === true && <Mole2 id="mole2-1" index="11" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole1 === true && (
+						<Mole1 id="mole1-1" index="1" startGame={props.startGame} handleClick1={handleClick1} />
+					)}
+					{mole11 === true && (
+						<Mole2 id="mole2-1" index="11" startGame={props.startGame} handleClick2={handleClick2} />
+					)}
 					{/* <Mole1 id="mole1-1" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole2 === true && <Mole1 id="mole1-2" index="2" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole12 === true && <Mole2 id="mole2-2" index="12" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole2 === true && (
+						<Mole1 id="mole1-2" index="2" startGame={props.startGame} handleClick1={handleClick1} />
+					)}
+					{mole12 === true && (
+						<Mole2 id="mole2-2" index="12" startGame={props.startGame} handleClick2={handleClick2} />
+					)}
 					{/* <Mole1 id="mole1-2" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole3 === true && <Mole1 id="mole1-3" index="3" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole13 === true && <Mole2 id="mole2-3" index="13" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole3 === true && (
+						<Mole1 id="mole1-3" index="3" startGame={props.startGame} handleClick1={handleClick1} />
+					)}
+					{mole13 === true && (
+						<Mole2 id="mole2-3" index="13" startGame={props.startGame} handleClick2={handleClick2} />
+					)}
 					{/* <Mole1 id="mole1-3" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole4 === true && <Mole1 id="mole1-4" index="4" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole14 === true && <Mole2 id="mole2-4" index="14" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole4 === true && (
+						<Mole1 id="mole1-4" index="4" startGame={props.startGame} handleClick1={handleClick1} />
+					)}
+					{mole14 === true && (
+						<Mole2 id="mole2-4" index="14" startGame={props.startGame} handleClick2={handleClick2} />
+					)}
 					{/* <Mole1 id="mole1-4" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole5 === true && <Mole1 id="mole1-5" index="5" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole15 === true && <Mole2 id="mole2-5" index="15" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole5 === true && (
+						<Mole1 id="mole1-5" index="5" startGame={props.startGame} handleClick1={handleClick1} />
+					)}
+					{mole15 === true && (
+						<Mole2 id="mole2-5" index="15" startGame={props.startGame} handleClick2={handleClick2} />
+					)}
 					{/* <Mole1 id="mole1-5" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole6 === true && <Mole1 id="mole1-6" index="6" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole16 === true && <Mole2 id="mole2-6" index="16" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole6 === true && (
+						<Mole1 id="mole1-6" index="6" startGame={props.startGame} handleClick1={handleClick1} />
+					)}
+					{mole16 === true && (
+						<Mole2 id="mole2-6" index="16" startGame={props.startGame} handleClick2={handleClick2} />
+					)}
 					{/* <Mole1 id="mole1-5" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole7 === true && <Mole1 id="mole1-7" index="7" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole17 === true && <Mole2 id="mole2-7" index="17" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole7 === true && (
+						<Mole1 id="mole1-7" index="7" startGame={props.startGame} handleClick1={handleClick1} />
+					)}
+					{mole17 === true && (
+						<Mole2 id="mole2-7" index="17" startGame={props.startGame} handleClick2={handleClick2} />
+					)}
 					{/* <Mole1 id="mole1-5" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole8 === true && <Mole1 id="mole1-8" index="8" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole18 === true && <Mole2 id="mole2-8" index="18" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole8 === true && (
+						<Mole1 id="mole1-8" index="8" startGame={props.startGame} handleClick1={handleClick1} />
+					)}
+					{mole18 === true && (
+						<Mole2 id="mole2-8" index="18" startGame={props.startGame} handleClick2={handleClick2} />
+					)}
 					{/* <Mole1 id="mole1-5" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
 				<Computer className="computer">
-					{mole9 === true && <Mole1 id="mole1-9" index="9" startGame={props.startGame} handleClick1={handleClick1} />}
-					{mole19 === true && <Mole2 id="mole2-9" index="19" startGame={props.startGame} handleClick2={handleClick2} />}
+					{mole9 === true && (
+						<Mole1 id="mole1-9" index="9" startGame={props.startGame} handleClick1={handleClick1} />
+					)}
+					{mole19 === true && (
+						<Mole2 id="mole2-9" index="19" startGame={props.startGame} handleClick2={handleClick2} />
+					)}
 					{/* <Mole1 id="mole1-5" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
