@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import API from '../../utils/API';
-import Scoreboard from '../Scoreboard'
 
 function AddHighScore(props) {
     
@@ -13,14 +12,18 @@ function AddHighScore(props) {
 
     function handleFormSubmit(event) {
         event.preventDefault();
-        if (formObject.name && formObject.score) {
+        if (formObject.name && props.score) {
           API.newHighscore({
             name: formObject.name,
-            score: formObject.score,
+            score: props.score,
           })
-            .catch(err => console.log(err));
+          .catch(err => console.log(err));
         }
       };
+
+      function PlayAgain() {
+        props.PlayAgain();
+      }
     
     return (
       <form>
@@ -32,10 +35,13 @@ function AddHighScore(props) {
             name="name"
           />
         </div>
-          {props.score}
+        <label htmlFor="score">Score</label>{props.score}
         <button type="submit"
-        disabled={!(formObject.name && formObject.score)}
-        onClick={handleFormSubmit}
+        disabled={!(formObject.name && props.score)}
+        onClick={() => {
+          handleFormSubmit();
+          PlayAgain();
+        }}
         >Save</button>
       </form>
     );

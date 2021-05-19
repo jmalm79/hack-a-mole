@@ -6,6 +6,7 @@ import '../Mole1';
 import Mole2 from '../Mole2';
 import Mole1 from '../Mole1';
 import Scoreboard from "../Scoreboard";
+import GameOver from '../GameOver';
 // import insult api
 import API from "../../utils/API";
 
@@ -34,7 +35,8 @@ function GameGrid(props) {
     const [timer, setTimer ] = useState(20);
     const [playing, setPlaying ] = useState(false);
     const [score, setScore] = useState(0);
-	const [insults, setInsults] = useState([])
+	const [insults, setInsults] = useState([]);
+	const [gameover, setGameover] = useState(false);
 
 	// grabs insults from API and sets state
 	useEffect(() => {
@@ -136,6 +138,9 @@ function GameGrid(props) {
 				}
 			}
 			else {
+				if (timer === -1) {
+					setGameover(true);
+				}
 				setTimer(20);
 				//other end game logic, reactions here
 				setPlaying(false);
@@ -240,79 +245,6 @@ function GameGrid(props) {
 			setTimeout(() => setVariableMole(idx1 + 1, false), randomTime(400, 1200));
 			setTimeout(() => setVariableMole(idx2 + 11, true), randomTime(200, 500));
 			setTimeout(() => setVariableMole(idx2 + 11, false), randomTime(1500, 2000));
-
-			// if (idx1 === 0) {
-			// 	setMole1(true);
-			// 	setTimeout(() => setMole1(false), randomTime(1000, 2000));
-			// }
-			// if (idx1 === 1) {
-			// 	setMole2(true);
-			// 	setTimeout(() => setMole2(false), randomTime(1000, 2000));
-			// }
-			// if (idx1 === 2) {
-			// 	setMole3(true);
-			// 	setTimeout(() => setMole3(false), randomTime(1000, 2000));
-			// }
-			// if (idx1 === 3) {
-			// 	setMole4(true);
-			// 	setTimeout(() => setMole4(false), randomTime(1000, 2000));
-			// }
-			// if (idx1 === 4) {
-			// 	setMole5(true);
-			// 	setTimeout(() => setMole5(false), randomTime(1000, 2000));
-			// }
-			// if (idx1 === 5) {
-			// 	setMole6(true);
-			// 	setTimeout(() => setMole6(false), randomTime(1000, 2000));
-			// }
-			// if (idx1 === 6) {
-			// 	setMole7(true);
-			// 	setTimeout(() => setMole7(false), randomTime(1000, 2000));
-			// }
-			// if (idx1 === 7) {
-			// 	setMole8(true);
-			// 	setTimeout(() => setMole8(false), randomTime(1000, 2000));
-			// }
-			// if (idx1 === 8) {
-			// 	setMole9(true);
-			// 	setTimeout(() => setMole9(false), randomTime(1000, 2000));
-			// }
-			// if (idx2 === 0) {
-			// 	setTimeout(() => setMole11(true), randomTime(200, 500));
-			// 	setTimeout(() => setMole11(false), randomTime(1500, 2000));
-			// }
-			// if (idx2 === 1) {
-			// 	setTimeout(() => setMole12(true), randomTime(200, 500));
-			// 	setTimeout(() => setMole12(false), randomTime(1500, 2000));
-			// }
-			// if (idx2 === 2) {
-			// 	setTimeout(() => setMole13(true), randomTime(200, 500));
-			// 	setTimeout(() => setMole13(false), randomTime(1500, 2000));
-			// }
-			// if (idx2 === 3) {
-			// 	setTimeout(() => setMole14(true), randomTime(200, 500));
-			// 	setTimeout(() => setMole14(false), randomTime(1500, 2000));
-			// }
-			// if (idx2 === 4) {
-			// 	setTimeout(() => setMole15(true), randomTime(200, 500));
-			// 	setTimeout(() => setMole15(false), randomTime(1500, 2000));
-			// }
-			// if (idx2 === 5) {
-			// 	setTimeout(() => setMole16(true), randomTime(200, 500));
-			// 	setTimeout(() => setMole16(false), randomTime(1500, 2000));
-			// }
-			// if (idx2 === 6) {
-			// 	setTimeout(() => setMole17(true), randomTime(200, 500));
-			// 	setTimeout(() => setMole17(false), randomTime(1500, 2000));
-			// }
-			// if (idx2 === 7) {
-			// 	setTimeout(() => setMole18(true), randomTime(200, 500));
-			// 	setTimeout(() => setMole18(false), randomTime(1500, 2000));
-			// }
-			// if (idx2 === 8) {
-			// 	setTimeout(() => setMole19(true), randomTime(200, 500));
-			// 	setTimeout(() => setMole19(false), randomTime(1500, 2000));
-			// }
 		}
 		return { idx1: idx1, idx2: idx2 };
 	}
@@ -320,6 +252,10 @@ function GameGrid(props) {
 	function startGame() {
 		// console.log('test');
 		setTimeout(() => setLastHoles(showMole({ idx1: 10, idx2: 10 })), randomTime(50, 1000));
+	}
+
+	function PlayAgain() {
+		setGameover(false);
 	}
 
 	return (
@@ -387,6 +323,8 @@ function GameGrid(props) {
 					{mole19 === true && <Mole2 id="mole2-9" index="19" startGame={props.startGame} handleClick2={handleClick2} />}
 					{/* <Mole1 id="mole1-5" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
+
+				{gameover === true && <GameOver score={score} PlayAgain={PlayAgain}/>}
 			</div>
 		</div>
 	);
