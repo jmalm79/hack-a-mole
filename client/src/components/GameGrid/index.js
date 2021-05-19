@@ -89,6 +89,22 @@ function GameGrid(props) {
         }
     }
 
+	function queso() {
+		var msg = new SpeechSynthesisUtterance();
+			msg.text = "Queso";
+	
+			// text-to-speech call
+			window.speechSynthesis.speak(msg);
+	}
+
+	function notGage() {
+		var msg = new SpeechSynthesisUtterance();
+			msg.text = "Don't delete Gage!";
+	
+			// text-to-speech call
+			window.speechSynthesis.speak(msg);
+	}
+
 	const handleClick1 = (event) => {
 		// console.log(event.target.dataset.index);
 		let index = parseInt(event.target.dataset.index);
@@ -97,6 +113,7 @@ function GameGrid(props) {
 		setVariableMole(index, false);
 		let newScore = score + 5;
 		setScore(newScore);
+		queso();
 	};
 
 	const handleClick2 = (event) => {
@@ -105,6 +122,7 @@ function GameGrid(props) {
 		setVariableMole(index, false);
 		let newScore = score - 2;
 		setScore(newScore);
+		notGage();
 	};
 
 	useEffect( () => {
