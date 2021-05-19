@@ -32,12 +32,32 @@ const phraseSeed = [
 
 const highscoreSeed = [
   {
-    "name": "Brandon",
-    "score":  "12"
+    "name": "Ashley",
+    "score":  "70"
+  },
+  {
+    "name": "Daniel",
+    "score":  "76"
+  },
+  {
+    "name": "Michael",
+    "score":  "42"
+  },
+  {
+    "name": "Shannon",
+    "score":  "75"
+  },
+  {
+    "name": "Hannah",
+    "score":  "67"
+  },
+  {
+    "name": "Kady",
+    "score":  "80"
   },
   {
     "name": "Moe",
-    "score":  "13"
+    "score":  "76"
   }
 ]
 
