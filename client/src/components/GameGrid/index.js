@@ -10,7 +10,7 @@ import GameOver from '../GameOver';
 import { BrowserRouter as Route } from "react-router-dom";
 import InstructionsLink from "../InstructionsLink"
 import Instructions from "../layout/Instructions"
-import theme from '../../audio/HAMmainTheme.mp3'
+import theme from '../../audio/HAMmainTheme(quieter).mp3'
 
 // import insult api
 import API from '../../utils/API';
