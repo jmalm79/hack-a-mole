@@ -6,6 +6,7 @@ import Game from './components/layout/Game';
 import HighScores from './components/layout/HighScores';
 import Instructions from './components/layout/Instructions';
 import NewHighScore from './components/Form';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 // import {
 //   BrowserRouter as Router,
 //   Route,
@@ -44,11 +45,19 @@ function App() {
 
 	return (
 		<div>
-			<Header />
-			<Game />
-			<HighScores />
-			<NewHighScore />
-			<Instructions />
+			<Router>
+				<Header />
+
+				<Switch>
+					<Route exact path="/" component={Game} />
+
+					<Route exact path="/play" component={Game} />
+
+					<Route exact path="/high-scores" component={HighScores} />
+
+					<Route exact path="/instructions" component={Instructions} />
+				</Switch>
+			</Router>
 			<Footer />
 		</div>
 	);
