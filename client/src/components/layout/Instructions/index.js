@@ -7,23 +7,22 @@ const Instructions = () => {
 			<div className="row">
 				<h1>INSTRUCTIONS</h1>
 				<p>
-					This will be a brief description about this game and below we will have a nice list about the rules
-					and how the game works. But I am not going to write that right now for two reasons:
-				</p>
-
+					Welcome to HACKaMOLE! Here you will find yourself in a safe space for students. A place to relax and unwind after a long hard day of Bootcamp. Or more accuately, a safe haven from the barrage of insults dished out by the
+	"Instructor". Or so we thought.... </p>
+				<br />
 				<ol>
-					<li>Rules and gameplay isn't set yet.</li>
-					<li>I don't care.</li>
+					<li>Help us protect our space! All you have to do is stop the "Instructor" (Instructor = red background) from hacking their way in.</li>
+					<li>You will also see our Fearless "T/A" (T/A = yellow background) working to block open terminals. Try not to block his work! </li>
 				</ol>
 				<dl className="rules">
-					<dt>Rules and gameplay isn't set yet.</dt>
-					<dd>(just don't do it...)</dd>
+					<dt>Start Game</dt>
+					<dd>Press the Start button to join the session.</dd>
 
-					<dt>I don't care.</dt>
-					<dd>(What do you mean? An African or European swallow?)</dd>
+					<dt>Game Play</dt>
+					<dd>A count down timer will start, Hack (click) on each Instructor to gain 5 points, note: clicking on a T/A will lose points. </dd>
 
-					<dt>Why did the chicken cross the road?</dt>
-					<dd>(To get to the other side)</dd>
+					<dt>Log your Score.</dt>
+					<dd>Show off your highscore by logging your name.</dd>
 				</dl>
 
 				<p className="start-btn">
