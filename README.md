@@ -5,7 +5,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <br />
 <p align="center">
@@ -68,20 +67,17 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Acknowledgements
 
-[contributors-shield]: https://img.shields.io/github/contributors/drewole/employee-directory-react.svg?style=for-the-badge
-[contributors-url]: https://github.com/drewole/employee-directory-react/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/drewole/employee-directory-react.svg?style=for-the-badge
-[forks-url]: https://github.com/drewole/employee-directory-react/network/members
-[stars-shield]: https://img.shields.io/github/stars/drewole/employee-directory-react.svg?style=for-the-badge
-[stars-url]: https://github.com/drewole/employee-directory-react/stargazers
-[issues-shield]: https://img.shields.io/github/issues/drewole/employee-directory-react.svg?style=for-the-badge
-[issues-url]: https://github.com/drewole/employee-directory-react/issues
-[license-shield]: https://img.shields.io/github/license/drewole/employee-directory-react.svg?style=for-the-badge
-[license-url]: https://github.com/drewole/employee-directory-react/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/drewole
-[product-screenshot]: /screenshot.png
-[product-logo]: /musicLabLogo.png
+[mit]: https://opensource.org/licenses/MIT
+[contributors-shield]: https://img.shields.io/github/contributors/jmalm79/hack-a-mole.svg?style=for-the-badge
+[contributors-url]: https://github.com/jmalm79/hack-a-mole/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/jmalm79/hack-a-mole.svg?style=for-the-badge
+[forks-url]: https://github.com/jmalm79/hack-a-mole/network/members
+[stars-shield]: https://img.shields.io/github/stars/jmalm79/hack-a-mole.svg?style=for-the-badge
+[stars-url]: https://github.com/jmalm79/hack-a-mole/stargazers
+[issues-shield]: https://img.shields.io/github/issues/jmalm79/hack-a-mole.svg?style=for-the-badge
+[issues-url]: https://github.com/jmalm79/hack-a-mole/issues
+[license-shield]: https://img.shields.io/github/license/jmalm79/hack-a-mole.svg?style=for-the-badge
+[license-url]: https://github.com/jmalm79/hack-a-mole/blob/master/LICENSE.txt
 
 ## Questions
 
