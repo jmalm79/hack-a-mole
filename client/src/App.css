@@ -129,6 +129,7 @@ nav .high-scores svg {
 }
 nav .share button {
 	color: var(--pink);
+	cursor: pointer;
 	font-weight: 900;
 	font-family: "Montserrat", sans-serif;
 	border: none;
@@ -319,6 +320,9 @@ th {
 th:last-child {
 	text-align: right;
 }
+th:nth-child(3) {
+	text-align: center;
+}
 tr {
 	background-color: var(--table-dark);
 }
@@ -350,6 +354,10 @@ td.score {
 	text-align: right;
 	padding-right: 15px;
 	font-size: 1.2rem;
+}
+td.grade {
+	text-align: center;
+	color: var(--blue);
 }
 /* 
 ////// Instructions - stuff like ol's and schtuff
