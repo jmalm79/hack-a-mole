@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import Footer from './components/layout/Footer';
 import Header from './components/layout/Header';
 import Game from './components/layout/Game';
@@ -6,6 +7,7 @@ import HighScores from './components/layout/HighScores';
 import Instructions from './components/layout/Instructions';
 import Share from "./components/Share";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 
 function App() {
 	return (
