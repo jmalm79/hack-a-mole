@@ -349,6 +349,7 @@ td.score {
 	text-shadow: 2px 2px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 	text-align: right;
 	padding-right: 15px;
+	font-size: 1.2rem;
 }
 /* 
 ////// Instructions - stuff like ol's and schtuff

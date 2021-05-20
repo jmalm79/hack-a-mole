@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import AddHighScore from '../Form';
 
 const GameOver = (props) => {

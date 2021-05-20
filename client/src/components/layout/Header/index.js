@@ -4,10 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChessKing, faHeart, faGamepad } from '@fortawesome/free-solid-svg-icons';
 import Share from '../../Share';
 import Logo from '../../../images/logo.png';
-import HighScores from '../HighScores';
-import Game from '../Game';
-import Instructions from '../Instructions';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Header() {
 

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import './style.css';
-
 
 // function Timer() {
 //   const [counter, setCounter] = React.useState(60);
