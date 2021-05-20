@@ -17,8 +17,9 @@ function AddHighScore(props) {
 	}
 
 	function handleFormSubmit(event) {
+		console.log(props.score)
 		event.preventDefault();
-		if (formObject.name && props.score) {
+		if (formObject.name) {
 			console.log("test")
 			API.newHighscore({
 				name: formObject.name,
