@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChessKing, faHeart, faGamepad } from '@fortawesome/free-solid-svg-icons';
@@ -10,6 +10,22 @@ import Instructions from '../Instructions';
 import { Switch, Route, Link } from 'react-router-dom';
 
 function Header() {
+
+	const [shareState, setShareState] = useState({
+		visible: "false"
+	});
+
+	const handleVisibility = () => {
+		if (shareState.visible === "false") {
+			setShareState(({
+				visible: "true"
+			}))
+		} else {
+		setShareState(({
+			visible: "false"
+		}))}
+	}
+
 	return (
 		<header>
 			<Link to="/" className="logo">
@@ -31,13 +47,14 @@ function Header() {
 						</Link>
 					</li>
 					<li className="share">
-						<Link to="/share">
+						<button onClick={handleVisibility}>
 							<FontAwesomeIcon icon={faHeart} />
 							Share
-						</Link>
+						</button>
 					</li>
 				</ul>
 			</nav>
+			<Share isVisible={shareState.visible}/>
 		</header>
 	);
 }
