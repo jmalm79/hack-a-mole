@@ -11,11 +11,11 @@ const Instructions = () => {
 				<h1>INSTRUCTIONS</h1>
 				<p>
 					Welcome to <span className="hackamole">HACKaMOLE!</span> Here you will find yourself in a safe space
-					for students. A place to relax and unwind after a long hard day of Bootcamp. Or more accuately, a
+					for students. A place to relax and unwind after a long hard day of Bootcamp. Or more accurately, a
 					safe haven from the barrage of insults dished out by the "Instructor". Or so we thought....{' '}
 				</p>
 				<p>
-					Help us protect our space! All you have to do is stop the "Instructor" (Instructor = red background)
+					Help us protect our space! All you have to do is stop the "Instructor" (Instructor = red background and sun glasses)
 					from hacking their way in.
 				</p>
 				<p>
