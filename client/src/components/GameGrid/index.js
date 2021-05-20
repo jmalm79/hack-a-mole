@@ -16,8 +16,6 @@ import theme from '../../audio/HAMmainTheme(quieter).mp3'
 import API from '../../utils/API';
 
 function GameGrid(props) {
-
-	const [moles, setMoles] = useState([false]);
 	const [mole1, setMole1] = useState([false]);
 	const [mole2, setMole2] = useState([false]);
 	const [mole3, setMole3] = useState([false]);
@@ -151,24 +149,19 @@ function GameGrid(props) {
 				setPlaying(false);
 			}
 		},
-		[
-			timer
-		]
+		[timer]
 	);
 
 	useEffect(
 		() => {
 			if (playing === false) {
 				return;
-				console.log(playing);
 			}
 			else if (playing === true) {
 				startGame();
 			}
 		},
-		[
-			playing
-		]
+		[playing]
 	);
 
 	function randomTime(min, max) {
