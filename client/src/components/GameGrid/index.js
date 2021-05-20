@@ -256,6 +256,7 @@ function GameGrid(props) {
 
 	function startGame() {
 		// console.log('test');
+		
 		setTimeout(() => setLastHoles(showMole({ idx1: 10, idx2: 10 })), randomTime(50, 1000));
 		playAudio();
 	}
@@ -264,9 +265,15 @@ function GameGrid(props) {
 		setGameover(false);
 	}
 
-	function playAudio() {
+	async function playAudio() {
 		const audioElement = new Audio(theme);
-		audioElement.play();
+		// audioElement.play();
+		try {
+			await audioElement.play();
+		  } catch(err) {
+			  alert("Try another browser to hear the theme music!")
+			  console.log("err");
+		  }
 		return;
 	}
 
