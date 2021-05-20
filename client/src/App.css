@@ -127,8 +127,16 @@ nav .high-scores a {
 nav .high-scores svg {
 	color: var(--purple);
 }
-nav .share a {
+nav .share button {
 	color: var(--pink);
+	font-weight: 900;
+	font-family: "Montserrat", sans-serif;
+	border: none;
+	font-size: .9rem;
+	text-transform: uppercase;
+	background: none;
+	-webkit-text-stroke: 1px white;
+	text-shadow: 2px 2px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
 nav .share svg {
 	color: var(--pink);
@@ -136,6 +144,24 @@ nav .share svg {
 nav svg {
 	margin-right: 15px;
 	transform: scale(1.5);
+}
+
+/* 
+////// Share schtuff
+*/
+
+div.App {
+	position: absolute;
+	top: 100px;
+	right: 0;
+}
+div.App svg {
+	filter: saturate(0);
+	transition: all .2s ease-in-out;
+}
+div.App svg:hover {
+	filter: saturate(1);
+	transform: scale(1.2);
 }
 
 /* 
