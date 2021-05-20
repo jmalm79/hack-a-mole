@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import API from '../../utils/API';
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 function AddHighScore(props) {
 	const [formObject, setFormObject] = useState({});
@@ -37,6 +37,7 @@ function AddHighScore(props) {
 				Name <br />
 				<input onChange={handleInputChange} placeholder="Name" type="text" name="name" />
 			</label>
+
 				<button
 					className={'btn submit'}
 					type="submit"
@@ -45,6 +46,7 @@ function AddHighScore(props) {
 				>
 					Save
 			</button>
+
 		</form>
 	);
 }
