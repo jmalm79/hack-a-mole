@@ -41,7 +41,7 @@ Instructions for game play can be found on the /instructions page. Play the game
 
 - [React](https://reactjs.org/)
 - [Axios](https://www.npmjs.com/package/axios)
-- [Random User API](https://randomuser.me/)
+- [SpeechSynthesisUtterance](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance)
 - [Mongoose](https://mongoosejs.com/)
 - [React-Share](https://www.npmjs.com/package/react-share)
 
