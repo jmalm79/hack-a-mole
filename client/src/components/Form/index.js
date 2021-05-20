@@ -19,7 +19,7 @@ function AddHighScore(props) {
 				name: formObject.name,
 				score: props.score
 			}).catch((err) => console.log(err));
-			// PlayAgain();
+			PlayAgain();
 		}
 	}
 
