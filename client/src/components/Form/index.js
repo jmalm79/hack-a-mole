@@ -37,8 +37,6 @@ function AddHighScore(props) {
 				Name <br />
 				<input onChange={handleInputChange} placeholder="Name" type="text" name="name" />
 			</label>
-			<Link to="/high-scores">
-
 				<button
 					className={'btn submit'}
 					type="submit"
@@ -47,9 +45,6 @@ function AddHighScore(props) {
 				>
 					Save
 			</button>
-
-			</Link>
-
 		</form>
 	);
 }
