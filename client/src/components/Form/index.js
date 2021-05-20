@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import API from '../../utils/API';
-import { Link, Route } from 'react-router-dom'
-import HighScores from '../layout/HighScores'
+import { Link, useHistory } from 'react-router-dom'
 
 function AddHighScore(props) {
 	const [formObject, setFormObject] = useState({});
+
+	let history = useHistory();
+
+	const redirect = () => {
+		history.push('/high-scores')
+	}
 
 	function handleInputChange(event) {
 		const { name, value } = event.target;
@@ -19,12 +24,8 @@ function AddHighScore(props) {
 				name: formObject.name,
 				score: props.score
 			}).catch((err) => console.log(err));
-			// PlayAgain();
+			redirect();
 		}
-	}
-
-	function PlayAgain() {
-		props.PlayAgain();
 	}
 
 	return (
