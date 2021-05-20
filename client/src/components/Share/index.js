@@ -7,7 +7,7 @@ function Share(props) {
     return (
       <div className="App">
         <FacebookShareButton
-          url={"https://github.com/jmalm79/hack-a-mole"}
+          url={"https://enigmatic-sierra-05882.herokuapp.com/"}
           quote={""}
           hashtag={"#hashtag"}
           description={"bootcamp_project"}
@@ -18,7 +18,7 @@ function Share(props) {
         <br />
         <TwitterShareButton
           title={"Hack-A-Mole"}
-          url={"https://github.com/jmalm79/hack-a-mole"}
+          url={"https://enigmatic-sierra-05882.herokuapp.com/"}
           hashtags={["hashtag1", "hashtag2"]}
         >
           <TwitterIcon size={32} round />
