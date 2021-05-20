@@ -37,18 +37,21 @@ function HighScoreTable() {
 						if (score >= 90 && score < 100) { return "A" } else
 							if (score >= 100) { return "A+" }
 	}
+	function randomKey() {
+		return Math.random();
+	}
 
 	return (
 		<table>
 			<tbody>
-				<tr className="table-header">
+				<tr className="table-header" key="1">
 					<th>Position</th>
 					<th>Name</th>
 					<th>Central Grading</th>
 					<th>Score</th>
 				</tr>
 				{highscores.map((highscore, index) => (
-					<tr className="score-row">
+					<tr className="score-row" key={highscore._id}>
 						<td className="position">{index + 1}</td>
 						<td className="name">{highscore.name}</td>
 						<td className="grade">{getGrade(highscore.score)}</td>
