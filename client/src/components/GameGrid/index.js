@@ -36,9 +36,9 @@ function GameGrid(props) {
 	const [mole19, setMole19] = useState([false]);
 	const [lastholes, setLastHoles] = useState({ idx1: 10, idx2: 10 });
 
-    const [timer, setTimer ] = useState(30);
-    const [playing, setPlaying ] = useState(false);
-    const [score, setScore] = useState(0);
+	const [timer, setTimer] = useState(30);
+	const [playing, setPlaying] = useState(false);
+	const [score, setScore] = useState(0);
 	const [insults, setInsults] = useState([]);
 	const [gameover, setGameover] = useState(false);
 
@@ -81,17 +81,15 @@ function GameGrid(props) {
 	// 	}, 4000);
 	// }
 
-
-    const handleStartBtn = event => {
-        if (playing === false) {
-        setTimer(30);
-        setScore(0);
-        setPlaying(true);
-        setTimeout(() => setTimer(timer-1), 1000)
-		// startInsults()
-        }
-    }
-
+	const handleStartBtn = event => {
+		if (playing === false) {
+			setTimer(30);
+			setScore(0);
+			setPlaying(true);
+			setTimeout(() => setTimer(timer - 1), 1000)
+			// startInsults()
+		}
+	}
 
 	function queso() {
 		var msg = new SpeechSynthesisUtterance();
@@ -270,24 +268,32 @@ function GameGrid(props) {
 		const audioElement = new Audio(theme);
 		audioElement.play();
 		return;
-	  }
+	}
 
 	return (
 		<div className="game">
 			<div className="game-running">
-				<Scoreboard score={score} />
 
-				<p className="start-btn">
-					<StartBtn
-						subText="(Start The Game)"
-						buttonText="Check-In To Class"
-						handleStartBtn={handleStartBtn}
-					/>
-					{/* TODO: This needs to match the other button at the bottom of scores */}
-					<Route exact path="/instructions" component={Instructions} />
-					<InstructionsLink />
-				</p>
-				<Timer time={timer} />
+				{playing === false && (
+					<p className="start-btn">
+						<StartBtn
+							subText="(Start The Game)"
+							buttonText="Check-In To Class"
+							handleStartBtn={handleStartBtn}
+						/>
+						{/* TODO: This needs to match the other button at the bottom of scores */}
+						<Route exact path="/instructions" component={Instructions} />
+						<InstructionsLink />
+					</p>
+				)}
+
+				{playing === true && (
+					<>
+						<Scoreboard score={score} />
+						<Timer time={timer} />
+					</>
+				)}
+
 			</div>
 			<div className="grid">
 				<Computer className="computer">
@@ -380,7 +386,7 @@ function GameGrid(props) {
 					{/* <Mole1 id="mole1-5" startGame={props.startGame} handleClick1={props.handleClick1}/> */}
 				</Computer>
 
-				{gameover === true && <GameOver score={score} PlayAgain={PlayAgain}/>}
+				{gameover === true && <GameOver score={score} PlayAgain={PlayAgain} />}
 			</div>
 		</div>
 	);
