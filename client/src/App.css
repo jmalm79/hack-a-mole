@@ -253,13 +253,6 @@ p[role=button] {
 	display: block;
 }
 
-.mole1:hover {
-	cursor: url('https://arrow.drewolsen.dev/wp-content/uploads/squirrelHammer-1.png') 43 35, auto;
-}
-.mole2:hover {
-	cursor: url('https://arrow.drewolsen.dev/wp-content/uploads/squirrelHammer-1.png') 86 71, auto;
-}
-
 .box .mole1 img,
 .box .mole2 img {
 	height: auto;
