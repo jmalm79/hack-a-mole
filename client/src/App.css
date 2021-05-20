@@ -129,6 +129,7 @@ nav .high-scores svg {
 }
 nav .share button {
 	color: var(--pink);
+	cursor: pointer;
 	font-weight: 900;
 	font-family: "Montserrat", sans-serif;
 	border: none;
