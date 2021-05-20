@@ -77,6 +77,8 @@ Email: [Levischwartzberg@gmail.com](Levischwartzberg@gmail.com)
 GitHub: [https://github.com/jmalm79](https://github.com/jmalm79)<br />
 Email: [jmalm79@gmail.com](jmalm79@gmail.com)
 
+Play HACKaMOLE [Here](https://enigmatic-sierra-05882.herokuapp.com/)
+
 <a href="#">
     <img src="./client/src/images/instructions.jpg" alt="screenshot"/>
   </a>
