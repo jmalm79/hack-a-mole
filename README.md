@@ -1,29 +1,28 @@
 # HACKaMOLE
 
+[![MIT License][license-shield]][license-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 
 <br />
 <p align="center">
   <a href="#">
-    <img src="/client/src/images/Logo.png" alt="Logo"/>
+    <img src="./client/src/images/logo.png" alt="Logo"/>
   </a>
-
+</p>
 <h3 align="center">Bootcamp Group Project #3</h3>
-<p align="center">HACKaMOLE was built using the MERN technology stack by 4 students in the UofM Coding Bootcamp. </p>
+<p align="center">HACKaMOLE was built using the MERN technology stack by 4 students in the UofM Coding Bootcamp, in six days! </p>
 
 ## Table of Contents
 
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [License](#License)
 - [Tech Used](#Tech)
 - [Contributing](#Contributing)
-- [Contributors](#Contributors)
 - [Questions](#Questions)
+- [Contributors](#Contributors)
 
 ## Installation
 
@@ -36,14 +35,15 @@ Please follow these steps to ensure a proper installation.
 
 ## Usage
 
-You can view . Play the game and log your highscore. Can you top the leaderboard?
+Instructions for game play can be found on the /instructions page. Play the game and log your high score. Can you make it to the top of the leaderboard?
 
-## License
+## Tech
 
-The MIT License
-
-Please follow the link to learn more about the License this project is protected under.
-[https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)
+- [React](https://reactjs.org/)
+- [Axios](https://www.npmjs.com/package/axios)
+- [Random User API](https://randomuser.me/)
+- [Mongoose](https://mongoosejs.com/)
+- [React-Share](https://www.npmjs.com/package/react-share)
 
 ## Contributing
 
@@ -55,19 +55,34 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## Tech
+## Questions
 
-- [React](https://reactjs.org/)
-- [Axios](https://www.npmjs.com/package/axios)
-- [Random User API](https://randomuser.me/)
-- [Mongoose](https://mongoosejs.com/)
-- [React-Share](https://www.npmjs.com/package/react-share)
+Please contact any of the contributors below for questions about this project.
 
-![ScreenShot of this.](images/projectScreenShot.jpg)
+## Contributors
 
-## Acknowledgements
+<strong>Drew Olsen</strong> <br />
+GitHub: [https://github.com/Drewole](https://github.com/Drewole)<br />
+Email: [olsenj.andrew@gmail.com](olsenj.andrew@gmail.com)
 
-[mit]: https://opensource.org/licenses/MIT
+<strong>Najua Saad</strong> <br />
+GitHub: [https://github.com/najuasaad](https://github.com/najuasaad)<br />
+Email: [najuasaad@gmail.com](najuasaad@gmail.com)
+
+<strong>Levi Schwartzberg</strong> <br />
+GitHub: [https://github.com/Levischwartzberg](https://github.com/Levischwartzberg)<br />
+Email: [Levischwartzberg@gmail.com](Levischwartzberg@gmail.com)
+
+<strong>Joshua Alm</strong> <br />
+GitHub: [https://github.com/jmalm79](https://github.com/jmalm79)<br />
+Email: [jmalm79@gmail.com](jmalm79@gmail.com)
+
+<a href="#">
+    <img src="./client/src/images/instructions.jpg" alt="screenshot"/>
+  </a>
+
+[license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg
+[license-url]: https://github.com/jmalm79/hack-a-mole/blob/master/LICENSE.txt
 [contributors-shield]: https://img.shields.io/github/contributors/jmalm79/hack-a-mole.svg?style=for-the-badge
 [contributors-url]: https://github.com/jmalm79/hack-a-mole/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/jmalm79/hack-a-mole.svg?style=for-the-badge
@@ -76,23 +91,3 @@ Contributions are what make the open source community such an amazing place to b
 [stars-url]: https://github.com/jmalm79/hack-a-mole/stargazers
 [issues-shield]: https://img.shields.io/github/issues/jmalm79/hack-a-mole.svg?style=for-the-badge
 [issues-url]: https://github.com/jmalm79/hack-a-mole/issues
-[license-shield]: https://img.shields.io/github/license/jmalm79/hack-a-mole.svg?style=for-the-badge
-[license-url]: https://github.com/jmalm79/hack-a-mole/blob/master/LICENSE.txt
-
-## Questions
-
-Please contact any of the contributors below for questions about this project.
-
-## Contributors
-
-Drew Olsen <br />
-[https://github.com/Drewole](https://github.com/Drewole)
-
-Najua Saad <br />
-[https://github.com/najuasaad](https://github.com/najuasaad)
-
-Levi Schwartzberg <br />
-[https://github.com/Levischwartzberg](https://github.com/Levischwartzberg)
-
-Joshua Alm <br />
-[https://github.com/jmalm79](https://github.com/jmalm79)
